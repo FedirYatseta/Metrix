@@ -2,8 +2,6 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import Providers from '@/components/Providers'
 import { poppins } from './fonts'
-import login from '@/image/Login.png'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Metrix',
@@ -18,7 +16,7 @@ const RootLayout = ({
 
   return (
     <html lang="en" className={poppins.className}>
-      <body className='bg-main flex justify-center flex-col items-center h-screen relative' >
+      <body className='bg-main flex  h-screen relative' >
         <Providers>
           {children}
         </Providers>

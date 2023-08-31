@@ -38,6 +38,9 @@ const config: Config = {
       'fill': '#EFF1F999',
       'err': '#FCF3F2B2',
       'danger': '#F57E77',
+      'grey': '#5E63661A',
+      'white-yellow': '#FFCC9133',
+      'stroke': '#F1F3F9',
       'black': {
         default: '#1C1D22',
         100: '#BEC0CA',
