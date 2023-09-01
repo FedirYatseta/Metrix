@@ -14,8 +14,8 @@ const navItems = [
     { label: "Settings", href: "/main/settings", image: Settings },
 ]
 const Header = () => {
-    const [rollout, setRollout] = useState(false)
-    const [showText, setShowText] = useState(false);
+    const [rollout, setRollout] = useState(true)
+    const [showText, setShowText] = useState(true);
 
     // Add a delay before showing the text after the rollout animation
     useEffect(() => {

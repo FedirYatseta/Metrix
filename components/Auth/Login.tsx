@@ -1,24 +1,24 @@
 "use client"
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react"
-import { Eye, Eyeoff, Lock, Message, Profile } from "@/image/image";
+import { Eye, Eyeoff, Lock, Message } from "@/image/image";
 import { Field, Form, Formik, FormikHelpers } from "formik";
 import * as Yup from 'yup';
 import Link from "next/link";
+import { inter } from "@/app/fonts";
 
 
 interface Values {
-    name: string;
+    email: string;
     password: string;
-    email: string
 }
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required'),
-    name: Yup.string().required('Name is required'),
 });
 
-const CredentialForm = () => {
+const Login = () => {
 
     const [show, setShow] = useState(true);
 
@@ -30,15 +30,25 @@ const CredentialForm = () => {
     const router = useRouter()
 
     const handleSubmitLogin = async (e: any) => {
-        console.log('New User', e);
+        console.log('eeeeeee', e);
+
+        const res = await signIn('credentials', {
+            email: e.email,
+            password: e.password,
+            redirect: false
+        })
+        if (res && !res.error) {
+            router.push('/')
+        } else {
+            console.log(res?.error)
+        }
 
     }
     return (
         <Formik
             initialValues={{
-                name: '',
+                email: '',
                 password: '',
-                email: ''
 
             }}
             validationSchema={SignupSchema}
@@ -54,22 +64,6 @@ const CredentialForm = () => {
                 <Form className="pt-14 flex flex-col max-w-lg w-full m-auto">
                     <label className="relative block w-96 my-4">
                         <span className="absolute inset-y-0 left-0 flex items-center px-4">
-                            <Profile color={""} opacity={0} />
-                        </span>
-                        <Field
-                            id='name'
-                            type="name"
-                            name='name'
-                            placeholder="Your Full Name"
-                            className={`  rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none   ${(touched.name && errors.name) ? 'bg-[#FCF3F2B2]' : 'bg-black-950'} `}
-
-                        />
-                        {touched.name && errors.name && (
-                            <p className="text-danger align-start absolute text-xs">{errors.name}</p>
-                        )}
-                    </label>
-                    <label className="relative block w-96 my-4">
-                        <span className="absolute inset-y-0 left-0 flex items-center px-4">
                             <Message color={""} opacity={0} />
                         </span>
                         <Field
@@ -77,8 +71,7 @@ const CredentialForm = () => {
                             type="email"
                             name='email'
                             placeholder="Email Address"
-                            className={`  rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${(touched.email && errors.email) ? 'bg-[#FCF3F2B2]' : 'bg-black-950'} `}
-
+                            className={`rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${(touched.email && errors.email) ? 'bg-[#FCF3F2B2]' : 'bg-black-950'}   `}
                         />
                         {touched.email && errors.email && (
                             <p className="text-danger align-start absolute text-xs">{errors.email}</p>
@@ -96,17 +89,17 @@ const CredentialForm = () => {
                             name='password'
                             placeholder="Password"
                             type={show ? "password" : 'text'}
-                            className={` rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${(touched.password && errors.password) ? 'bg-[#FCF3F2B2]' : 'bg-black-950'} `} />
+                            className={`  rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${(touched.password && errors.password) ? 'bg-[#FCF3F2B2]' : 'bg-black-950'}  `} />
                         {touched.password && errors.password && (
-                            <p className="text-danger align-start absolute text-xs">{errors.password}</p>
+                            <p className="text-danger align-start absolute text-xs ">{errors.password}</p>
                         )}
                     </label>
-                    <p className="text-sm font-normal my-12 text-black-300"> Already have an account?  <Link href="/signin" className="text-primary"> Login</Link></p>
-
+                    <Link href="/#" className={`${inter.className} text-sm font-normal text-primary text-right`}> Recover Password</Link>
+                    <p className="text-sm font-normal my-12 text-black-300"> Don’t have an account? <Link href="/signin/register" className="text-primary">  Sign Up</Link></p>
                     <button type="submit" className="rounded-xl px-16 py-4 bg-primary text-white max-w-min m-auto"> Login</button>
                 </Form>)}
         </Formik>
     )
 };
 
-export default CredentialForm;
+export default Login;

@@ -33,12 +33,24 @@ const config: Config = {
     },
     colors: {
       'primary': '#5570F1',
-      'secondary': '#FFCC91',
+      'secondary': {
+        default: '#FFCC91',
+        100: '#FEF9F2',
+        200: '#FEF5EA',
+        300: '#FFF2E2',
+        400: '#FFF0DE',
+        500: '#FFEAD1',
+        600: '#FFE5C8',
+        700: '#FFDFBA',
+        800: '#FFDAAE',
+        900: '#FFD29E',
+      },
       'hov': '#E9ECF8E5',
       'fill': '#EFF1F999',
       'err': '#FCF3F2B2',
       'danger': '#F57E77',
       'grey': '#5E63661A',
+      'grey-1': '#E1E2E9',
       'white-yellow': '#FFCC9133',
       'stroke': '#F1F3F9',
       'black': {
@@ -58,7 +70,12 @@ const config: Config = {
       'deny': '#CC5F5F',
       'main': '#F4F5FA',
       'white': '#FFF',
+      'pressed': '#5B6EC6',
+      'hover': '#304bc7'
     },
+    backgroundImage: {
+      'arrow-pattern': "url('/image/fi_chevron-down.svg')",
+    }
 
   },
   plugins: [],
