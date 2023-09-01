@@ -2,10 +2,12 @@ import { inter } from '@/app/fonts'
 import Button from '@/components/Button'
 import BlockSum from '@/components/Order/BlockSum'
 import EmptyTable from '@/components/Order/EmptyTable'
+import Table from '@/components/Table/Table'
 import { Order, Plus } from '@/image/image'
 import React from 'react'
 
 const Orders = async () => {
+  const data = true
   return (
     <section className='p-5 flex flex-col flex-auto'>
       <div className='flex items-center justify-between w-full '>
@@ -17,8 +19,8 @@ const Orders = async () => {
         <BlockSum />
         <BlockSum />
       </div>
-      <div className='bg-white rounded-xl flex-auto items-center justify-center'>
-        <EmptyTable />
+      <div className='bg-white rounded-xl flex-auto items-center justify-center p-5'>
+        {data ? <Table /> : <EmptyTable />}
       </div>
     </section>
   )
