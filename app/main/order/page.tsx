@@ -1,12 +1,23 @@
+"use client"
 import { inter } from '@/app/fonts'
 import Button from '@/components/Button'
 import BlockSum from '@/components/Order/BlockSum'
 import EmptyTable from '@/components/Order/EmptyTable'
 import Table from '@/components/Table/Table'
 import { Order, Plus } from '@/image/image'
-import React from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 
-const Orders = async () => {
+const Orders = () => {
+  const ref = useRef(null);
+  const [height, setHeight] = useState<number>(0);
+
+  console.log('ref', height, ref)
+
+  useLayoutEffect(() => {
+    if (ref?.current) {
+      setHeight(ref?.current?.offsetHeight - 160);
+    }
+  }, [ref])
   const data = true
   return (
     <section className='p-5 flex flex-col flex-auto'>
@@ -19,8 +30,8 @@ const Orders = async () => {
         <BlockSum />
         <BlockSum />
       </div>
-      <div className='bg-white rounded-xl flex-auto items-center justify-center p-5'>
-        {data ? <Table /> : <EmptyTable />}
+      <div ref={ref} className='bg-white rounded-xl block p-5 h-full  overflow-hidden'>
+        {data ? <Table height={height} /> : <EmptyTable />}
       </div>
     </section>
   )

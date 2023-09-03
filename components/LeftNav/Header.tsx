@@ -29,7 +29,7 @@ const Header = () => {
         setRollout(!rollout)
     }
     return (
-        <header className={`bg-white ease-in-out delay-150 duration-200  flex flex-col justify-between ${rollout ? 'w-24  px-4' : 'w-96  px-8'}`}>
+        <header className={`bg-white h-full ease-in-out delay-150 duration-200  flex flex-col justify-between ${rollout ? 'w-24  px-4' : 'w-96  px-8'}`}>
             <div>
                 <div className={`flex items-center ${rollout && 'justify-center'} cursor-pointer  py-3`} onClick={handleOpen}>
                     <Logo color="" opacity={1} />

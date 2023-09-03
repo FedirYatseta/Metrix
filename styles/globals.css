@@ -36,3 +36,12 @@ select {
     display: block;
     border: none;
 }
+input:checked + div {
+  @apply border-primary;
+}
+
+input:checked + div div {
+  @apply flex;
+}
+
+
