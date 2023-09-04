@@ -1,157 +1,27 @@
 'use client'
 import { inter } from "@/app/fonts";
-import { Sort } from "@/image/image";
-import React, { useState } from "react";
+import { DateIcon, FilterIcon, SearchInput, ShareIcon, Sort } from "@/image/image";
+import React, { useCallback, useMemo, useState } from "react";
 import Checkbox from "../CheckBox/Checkbox";
+import OutlineBtn from "../Button/outline";
+import { Row } from "./interface";
+import { row, title } from "./index.config";
+import TableHeader from "./component/TableHeader";
 
-
-type Row = {
-    id: number;
-    name: string;
-    date: string;
-    type: string;
-    track: string;
-    sum: string;
-    action: string;
-    status: string;
-};
-
-const title = [
-    { text: ' ', key: 'check' },
-    { text: 'Customer Name', key: 'name' },
-    { text: 'Order Date', key: 'date' },
-    { text: 'Order Type', key: 'type' },
-    { text: 'Tracking ID', key: 'track' },
-    { text: 'Order Total', key: 'sum' },
-    { text: 'Action', key: 'action' },
-    { text: 'Status', key: 'status' },
-];
-
-const row: Row[] = [
-    {
-        id: 1,
-        name: 'Janet Adebayo',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '22,000.00',
-        action: 'Completed',
-        status: 'Completed'
-    },
-    {
-        id: 2,
-        name: 'Samuel Johnson',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Pick Up',
-        track: '9348fjr73',
-        sum: '21,000.00',
-        action: 'Completed',
-        status: 'Completed'
-    },
-    {
-        id: 3,
-        name: 'Francis Doe',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Pick Up',
-        track: '9348fjr73',
-        sum: '27,000.00',
-        action: 'In-Progress',
-        status: 'In-Progress'
-    },
-    {
-        id: 4,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 5,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 6,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 7,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 8,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 9,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 10,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-    {
-        id: 11,
-        name: 'Christian Dior',
-        date: '12 Aug 2022 - 12:25 am',
-        type: 'Home Delivery',
-        track: '9348fjr73',
-        sum: '26,000.00',
-        action: 'Pending',
-        status: 'Pending'
-    },
-
-];
 
 const Table = ({ height }: any) => {
     const [rows, setRows] = useState<Row[]>(row);
+
+
     const [checkAll, setCheckAll] = useState(false);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
     const [sortColumn, setSortColumn] = useState<string | null>(null);
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
-    const test = height.toString()
-    console.log(test);
+    const tableHeight = height.toString()
 
-    const handleCheckboxChange = (id) => {
+
+    const handleCheckboxChange = (id: any) => {
         const updatedSelectedRows = [...selectedRows];
         if (updatedSelectedRows.includes(id)) {
             updatedSelectedRows.splice(updatedSelectedRows.indexOf(id), 1);
@@ -192,41 +62,40 @@ const Table = ({ height }: any) => {
         }
     });
 
+    const updateRowsInTable = (e: any, id: any) => {
+        const updatedRows = [...rows];
+        const indexToUpdate = updatedRows.findIndex((item) => item.id === id);
+
+        if (indexToUpdate !== -1) {
+            updatedRows[indexToUpdate].action = e.target.value;
+            updatedRows[indexToUpdate].status = e.target.value;
+        }
+
+        setRows(updatedRows);
+    }
+
 
     return (
         < >
-            <div className="pb-4 text-start">Customer Orders</div>
-            <div className={`overflow-y-auto `} style={{ height: `${test}px` }}>
+            <div className="pb-4 text-start flex justify-between">
+                <h6>Customer Orders </h6>
+                <div className="flex text-xs">
+                    <label className="relative block border-0">
+                        <span className="absolute inset-0 left-2 flex items-center">
+                            <SearchInput />
+                        </span>
+                        <input className="rounded-md block py-1.5 px-9 w-full text-xs focus-within:hover:bg-hov focus:outline-none border border-black-100 " placeholder="Search">
+                        </input>
+                    </label>
+                    <OutlineBtn icon={<FilterIcon />} name={'Filter'} />
+                    <OutlineBtn icon={<DateIcon />} name={'Date'} />
+                    <OutlineBtn icon={<ShareIcon />} name={'Share'} />
+                </div>
+            </div>
+
+            <div className={`overflow-y-auto `} style={{ height: `${tableHeight}px` }}>
                 <table className=" table-auto w-full border-collapse">
-                    <thead className=" h-4 ">
-                        <tr className="sticky top-0 z-10 bg-white ">
-                            {title.map((column, ind) => (
-                                <th
-                                    key={ind}
-                                    className="h-12 cursor-pointer border-0"
-                                    onClick={() => handleSort(column.key)}
-
-                                >
-                                    <span className={`${inter.className} border-y-2 border-grey-1 text-sm text-black-900 font-normal flex items-center justify-center h-full w-full `}>
-                                        {column.key === 'check' ? (
-                                            <Checkbox
-                                                checked={checkAll}
-                                                onChange={() => handleCheckboxChangeAll()}
-                                            />
-
-                                        ) : (
-                                            <>{column.text}
-                                                <div className="px-2">
-                                                    <Sort />
-                                                </div>
-                                            </>
-
-                                        )}
-                                    </span>
-                                </th>
-                            ))}
-                        </tr>
-                    </thead>
+                    <TableHeader title={title} handleSort={handleSort} checkAll={checkAll} handleCheckboxChangeAll={handleCheckboxChangeAll} />
                     <tbody>
                         {sortedRows.map((item, key) => (
                             <tr key={key} className="h-12">
@@ -242,13 +111,9 @@ const Table = ({ height }: any) => {
                                 <td>{item.track}</td>
                                 <td>{item.sum}</td>
                                 <td>
-                                    <select className="pr-8 pl-4 m-auto bg-black-200 opacity-50 rounded-lg"
+                                    <select className="pr-8 pl-4 py-1 m-auto bg-black-200 opacity-50 rounded-lg text-xs"
                                         value={item.action}
-                                        onChange={(e) => {
-                                            const updatedRows = [...rows];
-                                            updatedRows[key].action = e.target.value;
-                                            setRows(updatedRows);
-                                        }}
+                                        onChange={(e) => updateRowsInTable(e, item.id)}
                                     >
                                         <option value="In-Progress">In-Progress</option>
                                         <option value="Completed">Completed</option>
@@ -256,7 +121,12 @@ const Table = ({ height }: any) => {
                                         <option value="Canceled">Canceled</option>
                                     </select>
                                 </td>
-                                <td>{item.status}</td>
+                                {item.status === 'Completed'
+                                    ? <td><span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs"> {item.status}</span> </td> : item.status === 'Pending'
+                                        ? <td > <span className="text-black bg-secondary-300 py-1 px-3 rounded-lg text-xs">{item.status} </span></td> : item.status === 'In-Progress'
+                                            ? <td  > <span className="text-primary-0 bg-primary-100 py-1 px-3 rounded-lg text-xs">{item.status}</span></td>
+                                            : <td ><span className="text-danger bg-[#fcd8d6] py-1 px-3 rounded-lg text-xs"> {item.status} </span></td>}
+
                             </tr>
                         ))}
                     </tbody>

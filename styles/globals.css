@@ -37,7 +37,7 @@ select {
     border: none;
 }
 input:checked + div {
-  @apply border-primary;
+  @apply border-primary-0;
 }
 
 input:checked + div div {

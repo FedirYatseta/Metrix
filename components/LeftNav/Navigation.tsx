@@ -32,7 +32,7 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
                     <Link
                         href={link.href}
                         key={link.label}
-                        className={`${isActive ? 'bg-primary text-white' : 'bg-white text-black'}
+                        className={`${isActive ? 'bg-primary-0 text-white' : 'bg-white text-black'}
                         ${showText ? 'justify-start' : 'justify-center'}
                          text-xl  font-serif font-semibold  not-italic my-2
                           leading-normal tracking-normal flex items-center px-5 py-4

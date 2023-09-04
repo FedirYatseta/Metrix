@@ -281,3 +281,63 @@ export const Sort = () => {
         </svg>
     )
 }
+
+export const Bags = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <g clip-path="url(#clip0_196_7245)">
+                <path d="M16.6663 18.3333C17.1266 18.3333 17.4997 17.9602 17.4997 17.5C17.4997 17.0397 17.1266 16.6666 16.6663 16.6666C16.2061 16.6666 15.833 17.0397 15.833 17.5C15.833 17.9602 16.2061 18.3333 16.6663 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.50033 18.3333C7.96056 18.3333 8.33366 17.9602 8.33366 17.5C8.33366 17.0397 7.96056 16.6666 7.50033 16.6666C7.04009 16.6666 6.66699 17.0397 6.66699 17.5C6.66699 17.9602 7.04009 18.3333 7.50033 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M0.833008 0.833374H4.16634L6.39967 11.9917C6.47588 12.3754 6.6846 12.72 6.9893 12.9653C7.29399 13.2106 7.67526 13.3409 8.06634 13.3334H16.1663C16.5574 13.3409 16.9387 13.2106 17.2434 12.9653C17.5481 12.72 17.7568 12.3754 17.833 11.9917L19.1663 5.00004H4.99967" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+                <clipPath id="clip0_196_7245">
+                    <rect width="20" height="20" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    )
+}
+
+
+export const SearchInput = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="8.80589" cy="8.30541" r="7.49047" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14.0156 13.9043L16.9523 16.8334" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
+export const FilterIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path d="M14.6663 2.5H1.33301L6.66634 8.80667V13.1667L9.33301 14.5V8.80667L14.6663 2.5Z" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
+export const DateIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+            <path d="M1.06152 5.76931H12.9442" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.96099 8.37307H9.96716" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.00298 8.37307H7.00915" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.03813 8.37307H4.04431" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.96099 10.9641H9.96716" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7.00298 10.9641H7.00915" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.03813 10.9641H4.04431" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.69552 0.833252V3.02711" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.31075 0.833252V3.02711" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.82551 1.88599H4.18064C2.22285 1.88599 1 2.97661 1 4.98134V11.0144C1 13.0507 2.22285 14.1665 4.18064 14.1665H9.81933C11.7833 14.1665 13 13.0696 13 11.0649V4.98134C13.0062 2.97661 11.7895 1.88599 9.82551 1.88599Z" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
+export const ShareIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+            <path d="M9.55498 4.94976L5.73936 8.80612L1.39962 6.09178C0.777834 5.70276 0.907177 4.75829 1.61048 4.55262L11.9142 1.53518C12.5582 1.34642 13.155 1.94855 12.9637 2.59466L9.91539 12.8912C9.70656 13.5955 8.76747 13.7213 8.38214 13.0968L5.73734 8.8068" stroke="#53545C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}

@@ -32,9 +32,20 @@ const config: Config = {
 
     },
     colors: {
-      'primary': '#5570F1',
+      'primary': {
+        0: '#5570F1',
+        100: '#DBDEEE',
+        200: '#C4CAE8',
+        300: '#B6BFE8',
+        400: '#ABB5E9',
+        500: '#97A5EB',
+        600: '#8899E9',
+        700: '#7C8FEC',
+        800: '#6D83EC',
+        900: '#6078EC',
+      },
       'secondary': {
-        default: '#FFCC91',
+        0: '#FFCC91',
         100: '#FEF9F2',
         200: '#FEF5EA',
         300: '#FFF2E2',
@@ -54,7 +65,7 @@ const config: Config = {
       'white-yellow': '#FFCC9133',
       'stroke': '#F1F3F9',
       'black': {
-        default: '#1C1D22',
+        0: '#1C1D22',
         100: '#BEC0CA',
         200: '#A6A8B1',
         300: '#8B8D97',
