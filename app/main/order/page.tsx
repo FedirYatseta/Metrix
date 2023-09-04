@@ -45,7 +45,7 @@ const Orders = () => {
       </div>
       <div className="grid grid-cols-3 gap-4 my-5">
         {block.map((item, key) => {
-          return (<BlockSum item={item} />)
+          return (<BlockSum item={item} key={key} />)
         })}
 
       </div>
