@@ -13,3 +13,8 @@ export interface Column {
     text: string,
     key: string
 }
+
+export interface Copy {
+    value: string,
+    copied: boolean
+}

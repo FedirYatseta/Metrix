@@ -1,17 +1,20 @@
 'use client'
 import { inter } from "@/app/fonts";
 import { DateIcon, FilterIcon, SearchInput, ShareIcon, Sort } from "@/image/image";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Checkbox from "../CheckBox/Checkbox";
 import OutlineBtn from "../Button/outline";
-import { Row } from "./interface";
+import { Row, Copy } from "./interface";
 import { row, title } from "./index.config";
 import TableHeader from "./component/TableHeader";
+import TableBody from "./component/TableBody";
+import { toast } from "react-toastify";
 
 
 const Table = ({ height }: any) => {
     const [rows, setRows] = useState<Row[]>(row);
-
+    const [state, setState] = useState<Copy>({ value: '', copied: false })
+    console.log(state);
 
     const [checkAll, setCheckAll] = useState(false);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
@@ -19,7 +22,9 @@ const Table = ({ height }: any) => {
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
     const tableHeight = height.toString()
-
+    useEffect(() => {
+        toast('Tracking ID Copied')
+    }, [state])
 
     const handleCheckboxChange = (id: any) => {
         const updatedSelectedRows = [...selectedRows];
@@ -96,40 +101,7 @@ const Table = ({ height }: any) => {
             <div className={`overflow-y-auto `} style={{ height: `${tableHeight}px` }}>
                 <table className=" table-auto w-full border-collapse">
                     <TableHeader title={title} handleSort={handleSort} checkAll={checkAll} handleCheckboxChangeAll={handleCheckboxChangeAll} />
-                    <tbody>
-                        {sortedRows.map((item, key) => (
-                            <tr key={key} className="h-12">
-                                <td>
-                                    <Checkbox
-                                        checked={selectedRows.includes(item.id)}
-                                        onChange={() => handleCheckboxChange(item.id)}
-                                    />
-                                </td>
-                                <td>{item.name}</td>
-                                <td>{item.date}</td>
-                                <td>{item.type}</td>
-                                <td>{item.track}</td>
-                                <td>{item.sum}</td>
-                                <td>
-                                    <select className="pr-8 pl-4 py-1 m-auto bg-black-200 opacity-50 rounded-lg text-xs"
-                                        value={item.action}
-                                        onChange={(e) => updateRowsInTable(e, item.id)}
-                                    >
-                                        <option value="In-Progress">In-Progress</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Pending">Pending</option>
-                                        <option value="Canceled">Canceled</option>
-                                    </select>
-                                </td>
-                                {item.status === 'Completed'
-                                    ? <td><span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs"> {item.status}</span> </td> : item.status === 'Pending'
-                                        ? <td > <span className="text-black bg-secondary-300 py-1 px-3 rounded-lg text-xs">{item.status} </span></td> : item.status === 'In-Progress'
-                                            ? <td  > <span className="text-primary-0 bg-primary-100 py-1 px-3 rounded-lg text-xs">{item.status}</span></td>
-                                            : <td ><span className="text-danger bg-[#fcd8d6] py-1 px-3 rounded-lg text-xs"> {item.status} </span></td>}
-
-                            </tr>
-                        ))}
-                    </tbody>
+                    <TableBody sortedRows={sortedRows} selectedRows={selectedRows} handleCheckboxChange={handleCheckboxChange} updateRowsInTable={updateRowsInTable} setState={setState} />
                 </table>
 
             </div>

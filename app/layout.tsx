@@ -2,7 +2,8 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import Providers from '@/components/Providers'
 import { poppins } from './fonts'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const metadata: Metadata = {
   title: 'Metrix',
   description: 'Createt  by FedirY',
@@ -17,6 +18,7 @@ const RootLayout = ({
   return (
     <html lang="en" className={poppins.className}>
       <body className='bg-main flex  h-screen relative' >
+        <ToastContainer />
         <Providers>
           {children}
         </Providers>
