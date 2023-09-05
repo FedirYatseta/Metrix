@@ -93,7 +93,7 @@ const Table = ({ height }: any) => {
                     <OutlineBtn icon={<FilterIcon />} name={'Filter'} />
                     <OutlineBtn icon={<DateIcon />} name={'Date'} />
                     <OutlineBtn icon={<ShareIcon />} name={'Share'} />
-                    <OutlineSelect name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1 mx-2" />
+                    <OutlineSelect handleChangeFc={() => { }} name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1 mx-2" />
                 </div>
             </div>
 

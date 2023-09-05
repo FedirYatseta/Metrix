@@ -39,7 +39,7 @@ const TableBody: React.FC<TableBodyProps> = ({ sortedRows, selectedRows, handleC
                     <td>
                         <OutlineSelect
                             name={item.action}
-                            handleChangeFc={(e, id) => updateRowsInTable(e, id)}
+                            handleChangeFc={updateRowsInTable}
                             options={options}
                             id={item.id}
                             className="bg-black-200  rounded-lg text-xs px-2 py-1" />

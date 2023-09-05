@@ -5,7 +5,7 @@ import { OptionsSelect } from "./interfaces";
 type SelectType = {
     name: string
     options: OptionsSelect[]
-    handleChangeFc?: (e?: ChangeEvent<HTMLSelectElement>, id?: number) => void
+    handleChangeFc: (e: ChangeEvent<HTMLSelectElement>, id?: number) => void
     id?: number
     className: string
 }
