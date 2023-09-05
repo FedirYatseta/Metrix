@@ -23,7 +23,8 @@ const Table = ({ height }: any) => {
 
     const tableHeight = height.toString()
     useEffect(() => {
-        toast('Tracking ID Copied')
+        if (state.copied === true)
+            toast('Tracking ID Copied', { theme: 'light' })
     }, [state])
 
     const handleCheckboxChange = (id: any) => {
