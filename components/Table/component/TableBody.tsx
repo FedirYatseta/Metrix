@@ -3,6 +3,9 @@ import React from "react"
 import { TableBodyProps } from "./interfaces";
 import { CopyIcon } from "@/image/image";
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { toast } from "react-toastify";
+import OutlineSelect from "@/components/Select/outline";
+import { options } from "../index.config";
 
 
 const TableBody: React.FC<TableBodyProps> = ({ sortedRows, selectedRows, handleCheckboxChange, updateRowsInTable, setState }) => {
@@ -23,7 +26,7 @@ const TableBody: React.FC<TableBodyProps> = ({ sortedRows, selectedRows, handleC
                         <span className="flex items-center justify-center h-full">
                             {item.track}
                             <CopyToClipboard text={item.track} onCopy={(e) => {
-                                console.log(e)
+                                toast('Tracking ID Copied', { theme: 'light' })
                                 setState({ value: item.track, copied: true })
                             }} >
                                 <span className="cursor-pointer pl-2" >
@@ -34,15 +37,13 @@ const TableBody: React.FC<TableBodyProps> = ({ sortedRows, selectedRows, handleC
                     </td>
                     <td>{item.sum}</td>
                     <td>
-                        <select className="pr-8 pl-4 py-1 m-auto bg-black-200 opacity-50 rounded-lg text-xs"
-                            value={item.action}
-                            onChange={(e) => updateRowsInTable(e, item.id)}
-                        >
-                            <option value="In-Progress">In-Progress</option>
-                            <option value="Completed">Completed</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Canceled">Canceled</option>
-                        </select>
+                        <OutlineSelect
+                            name={item.action}
+                            handleChangeFc={(e, id) => updateRowsInTable(e, id)}
+                            options={options}
+                            id={item.id}
+                            className="bg-black-200  rounded-lg text-xs px-2 py-1" />
+
                     </td>
                     {item.status === 'Completed'
                         ? <td><span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs"> {item.status}</span> </td> : item.status === 'Pending'

@@ -1,3 +1,4 @@
+import { OptionsSelect } from "../Select/interfaces";
 import { Column, Row } from "./interface";
 
 export const title: Column[] = [
@@ -10,6 +11,13 @@ export const title: Column[] = [
     { text: 'Action', key: 'action' },
     { text: 'Status', key: 'status' },
 ];
+
+export const options: OptionsSelect[] = [
+    { value: 'Completed', label: 'Completed' },
+    { value: 'In-Progress', label: 'In-Progress' },
+    { value: 'Pending', label: 'Pending' },
+    { value: 'Cancel', label: 'Cancel' }
+]
 
 export const row: Row[] = [
     {

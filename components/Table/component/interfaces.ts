@@ -13,5 +13,5 @@ export interface TableBodyProps {
     selectedRows: number[];
     handleCheckboxChange: (id: number) => void;
     setState: (e: Copy) => void
-    updateRowsInTable: (e: React.ChangeEvent<HTMLSelectElement>, id: number) => void;
+    updateRowsInTable: (e: React.ChangeEvent<HTMLSelectElement>, id?: number) => void;
 }

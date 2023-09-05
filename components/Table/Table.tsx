@@ -5,16 +5,16 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Checkbox from "../CheckBox/Checkbox";
 import OutlineBtn from "../Button/outline";
 import { Row, Copy } from "./interface";
-import { row, title } from "./index.config";
+import { options, row, title } from "./index.config";
 import TableHeader from "./component/TableHeader";
 import TableBody from "./component/TableBody";
-import { toast } from "react-toastify";
+import OutlineSelect from "../Select/outline";
 
 
 const Table = ({ height }: any) => {
     const [rows, setRows] = useState<Row[]>(row);
     const [state, setState] = useState<Copy>({ value: '', copied: false })
-    console.log(state);
+
 
     const [checkAll, setCheckAll] = useState(false);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
@@ -22,10 +22,7 @@ const Table = ({ height }: any) => {
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
     const tableHeight = height.toString()
-    useEffect(() => {
-        if (state.copied === true)
-            toast('Tracking ID Copied', { theme: 'light' })
-    }, [state])
+
 
     const handleCheckboxChange = (id: any) => {
         const updatedSelectedRows = [...selectedRows];
@@ -96,6 +93,7 @@ const Table = ({ height }: any) => {
                     <OutlineBtn icon={<FilterIcon />} name={'Filter'} />
                     <OutlineBtn icon={<DateIcon />} name={'Date'} />
                     <OutlineBtn icon={<ShareIcon />} name={'Share'} />
+                    <OutlineSelect name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1 mx-2" />
                 </div>
             </div>
 
