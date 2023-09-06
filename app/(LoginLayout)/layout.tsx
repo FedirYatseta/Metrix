@@ -37,7 +37,6 @@ const RootLayout = ({
           </section>
         </Providers>
       </body>
-
     </html>
   )
 }
