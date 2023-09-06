@@ -29,8 +29,8 @@ const Header = () => {
         setRollout(!rollout)
     }
     return (
-        <header className={`bg-white h-full ease-in-out delay-150 duration-200  flex flex-col justify-between ${rollout ? 'xs:w-20 lg:w-24 xs:px-1 lg:px-4' : 'w-96  px-8'}`}>
-            <div>
+        <header className={`bg-white h-full ease-in-out delay-150 duration-200  flex flex-col  justify-between ${rollout ? 'xs:w-20 lg:w-24 xs:px-1 lg:px-4' : 'xs:w-48 lg:w-96  xs:px-2 lg:px-8'}`}>
+            <div >
                 <div className={`flex items-center ${rollout && 'justify-center'} cursor-pointer  py-3`} onClick={handleOpen}>
                     <Logo color="" opacity={1} />
                     {showText && <h1 className="pl-3 ease-in-out delay-150 duration-200 font-bold  text-xl">Metrix</h1>}

@@ -13,9 +13,9 @@ const BlockSum = ({ item }: any) => {
                     <option selected value={'value1'}>This week</option>
                 </select></div>
             <div className={`grid ${item.completed ? 'grid-cols-3 ' : 'grid-cols-2'}  gap-4 xs:pt-2 lg:pt-8`}>
-                <div className='flex flex-col text-start'><span className={` ${inter.className} ${item.completed ? 'text-black-300' : 'text-danger'} text-md `}>{item?.orders}</span>  <span className="text-xl font-medium">0</span></div>
-                <div className='flex flex-col text-start'> <span className={` ${inter.className} text-md text-black-300`}>{item?.pending}</span> <span className="text-xl font-medium">0</span></div>
-                {item.completed && (<div className='flex flex-col text-start'> <span className={` ${inter.className} text-md text-black-300`}>{item?.completed}</span> <span className="text-xl font-medium">0</span></div>)}
+                <div className='flex flex-col text-start'><span className={` ${inter.className} ${item.completed ? 'text-black-300' : 'text-danger'} xs:text-sm lg:text-md`}>{item?.orders}</span>  <span className="xs:text-sm lg:text-xl font-medium">0</span></div>
+                <div className='flex flex-col text-start'> <span className={` ${inter.className} xs:text-sm lg:text-md text-black-300`}>{item?.pending}</span> <span className="xs:text-sm lg:text-xl font-medium">0</span></div>
+                {item.completed && (<div className='flex flex-col text-start'> <span className={` ${inter.className} xs:text-sm lg:text-md text-black-300`}>{item?.completed}</span> <span className="xs:text-sm lg:text-xl font-medium">0</span></div>)}
             </div>
         </div>
     )

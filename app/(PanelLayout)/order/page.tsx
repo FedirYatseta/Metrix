@@ -38,18 +38,18 @@ const Orders = () => {
   }, [ref])
   const data = true
   return (
-    <section className='xs:p-1 lg:p-5 flex flex-col flex-auto '>
+    <section className='xs:p-1 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full'>
       <div className='flex items-center justify-between w-full '>
         <h5 className={`${inter.className} text-lg font-bolt `}>Orders Summary</h5>
         <Button name="Create a New Order" icon={<Plus />} />
       </div>
-      <div className="grid xs:grid-col lg:grid-cols-3 gap-4 my-5">
+      <div className="grid xs:grid-col lg:grid-cols-3 xs:gap-2 lg:gap-4 xs:my-2 lg:my-5">
         {block.map((item, key) => {
           return (<BlockSum item={item} key={key} />)
         })}
 
       </div>
-      <div ref={ref} className='bg-white rounded-xl block xs:p-2 lg:p-5 h-full  overflow-hidden'>
+      <div ref={ref} className='bg-white rounded-xl block xs:p-2 lg:p-5 h-full  '>
         {data ? <Table height={height} /> : <EmptyTable />}
       </div>
     </section>

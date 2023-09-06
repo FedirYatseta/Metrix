@@ -24,7 +24,7 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
 
 
     return (
-        <nav className={`w-full flex flex-col ${!rollout ? ' justify-start' : ' justify-center'}  items-start mt-7 `}>{
+        <nav className={`w-full flex flex-col ${!rollout ? ' justify-start  items-start' : ' justify-center  items-center'}   xs:mt-2 lg:mt-7 `}>{
             navLinks.map(link => {
                 const isActive: boolean = pathname === link.href
 
@@ -35,8 +35,8 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
                         className={`${isActive ? 'bg-primary-0 text-white' : 'bg-white text-black'}
                         ${showText ? 'justify-start' : 'justify-center'}
                          text-xl  font-serif font-semibold  not-italic my-2
-                          leading-normal tracking-normal flex items-center px-5 py-4
-                           rounded-xl  max-w-xs w-full ease-in-out delay-150 duration-200`} >
+                          leading-normal tracking-normal flex items-center xs:px-2 lg:px-5 xs:py-1 lg:py-4
+                           rounded-xl  max-w-xs xs:w-10/12 lg:w-full ease-in-out delay-150 duration-200`} >
                         <link.image isActive={isActive} />
                         {showText && <p className={`ml-4 ${inter.className} text-sm font-normal `}>{link.label}  </p>}
                     </Link>
