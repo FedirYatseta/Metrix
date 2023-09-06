@@ -34,7 +34,7 @@ const Login = () => {
         const res = await signIn('credentials', {
             email: e.email,
             password: e.password,
-            redirect: true
+            redirect: false
         })
         if (res && !res.error) {
             router.push('/')
