@@ -55,8 +55,7 @@ const OutlineSelect = ({ name, options, handleChangeFc, id, className }: SelectT
                 ),
                 indicatorsContainer: (baseStyles) => ({
                     ...baseStyles,
-                    width: '15px',
-                    height: '15px'
+                    display: 'flex',
                 }),
                 menu: (baseStyles) => (
                     {

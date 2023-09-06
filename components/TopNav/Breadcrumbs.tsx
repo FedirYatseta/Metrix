@@ -21,7 +21,7 @@ const Breadcrumbs = () => {
             </Link>
             {breadcrumbs.map((breadcrumb, index) => (
                 <span key={breadcrumb.path} className={` ${inter.className} pl-2 text-sm text-black-200`}>
-                    {index > 0 && ' / '}
+                    {index > 0 && ' / '}/
                     <Link href={breadcrumb.path} className='capitalize pl-2 '>{breadcrumb.label}</Link>
                 </span>
             ))}
