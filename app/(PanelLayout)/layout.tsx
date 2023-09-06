@@ -16,34 +16,27 @@ export const metadata: Metadata = {
   description: 'Createt  by FedirY',
 }
 
-const RootLayout = ({
+const PanelLayout = ({
   children,
 }: {
   children: React.ReactNode
 }) => {
 
   return (
-    <html lang="en" className={poppins.className}>
-      <body className='bg-main flex  h-screen relative' >
-        <ToastContainer />
-        <Providers>
-          <Header />
-          <div className='flex flex-col w-full'>
-            <section className='w-full bg-white'>
-              <div className='flex px-5 py-3 justify-between items-center'>
-                <ClientComponent />
-                <Panel />
-              </div>
-              <Breadcrumbs />
-            </section>
-            {children}
+    <>
+      <Header />
+      <div className='flex flex-col w-full'>
+        <section className='w-full bg-white'>
+          <div className='flex px-5 py-3 justify-between items-center'>
+            <ClientComponent />
+            <Panel />
           </div>
-        </Providers>
-        {/* <Image src={login} alt='pixel' className='absolute  inset-y-0 left-0 z-0 opacity-50' /> */}
-      </body>
-
-    </html>
+          <Breadcrumbs />
+        </section>
+        {children}
+      </div>
+    </>
   )
 }
 
-export default RootLayout
+export default PanelLayout

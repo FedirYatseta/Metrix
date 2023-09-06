@@ -1,6 +1,6 @@
 "use client"
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react"
 import { Eye, Eyeoff, Lock, Message } from "@/image/image";
 import { Field, Form, Formik, FormikHelpers } from "formik";
@@ -21,6 +21,8 @@ const SignupSchema = Yup.object().shape({
 const Login = () => {
 
     const [show, setShow] = useState(true);
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") || "/order";
 
     const handleShowPass = (e: any) => {
         e.preventDefault();
@@ -34,10 +36,11 @@ const Login = () => {
         const res = await signIn('credentials', {
             email: e.email,
             password: e.password,
-            redirect: false
+            redirect: false,
+            callbackUrl
         })
         if (res && !res.error) {
-            router.push('/')
+            router.push(callbackUrl)
         } else {
             console.log(res?.error)
         }

@@ -12,33 +12,26 @@ export const metadata: Metadata = {
   description: 'Createt  by FedirY',
 }
 
-const RootLayout = ({
+const LoginLayout = ({
   children,
 }: {
   children: React.ReactNode
 }) => {
 
   return (
-    <html lang="en" className={poppins.className}>
-      <body className='bg-main flex  h-screen relative' >
-        <ToastContainer />
-        <Providers>
-          <section className="h-full w-full ">
-            <div className="py-3 px-20 bg-white absolute w-full ">
-              <Image priority src={logo} alt='logo' width={50} height={50} />
-            </div>
-            <div className="h-full flex items-center justify-center ">
-              <div className="bg-white p-9 rounded-xl  m-auto flex flex-col items-center">
-                <Image priority src={logo} alt='logo' className="m-auto my-3 " width={55} height={55} />
+    <section className="h-full w-full ">
+      <div className="py-3 px-20 bg-white absolute w-full ">
+        <Image priority src={logo} alt='logo' width={50} height={50} />
+      </div>
+      <div className="h-full flex items-center justify-center ">
+        <div className="bg-white p-9 rounded-xl  m-auto flex flex-col items-center">
+          <Image priority src={logo} alt='logo' className="m-auto my-3 " width={55} height={55} />
 
-                {children}
-              </div>
-            </div>
-          </section>
-        </Providers>
-      </body>
-    </html>
+          {children}
+        </div>
+      </div>
+    </section>
   )
 }
 
-export default RootLayout
+export default LoginLayout

@@ -1,7 +1,5 @@
 'use client'
 import React from "react"
-import logo from "@/app/(PanelLayout)/next.svg"
-import Image from 'next/image'
 import Login from "@/components/Auth/Login";
 import Button from "@/components/Button";
 import { Google } from "@/image/image";
