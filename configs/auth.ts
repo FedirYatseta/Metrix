@@ -46,11 +46,12 @@ export const authConfig: AuthOptions = {
     ],
     pages: {
         signIn: '/signin'
-    }, callbacks: {
-        async jwt({ token }) {
-            token.userRole = "admin"
-            return token
-        },
     },
+    // callbacks: {
+    //     async jwt({ token }) {
+    //         token.userRole = "admin"
+    //         return token
+    //     },
+    // },
 }
 
