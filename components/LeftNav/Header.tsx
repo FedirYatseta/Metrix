@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from "react"
 import { Navigation } from "./Navigation";
 import { Dash, Logo, Settings, Order, Customer, Inventory, Conversation, Logout, HeadPhones, Gift } from "@/image/image";
-import { inter } from "@/app/fonts";
 import Link from "next/link";
+import { inter } from "@/styles/fonts";
 
 const navItems = [
-    { label: "Dashboard", href: "/main/dashboard", image: Dash },
-    { label: "Orders", href: "/main/order", image: Order },
-    { label: "Inventory", href: "/main/inventory", image: Inventory },
-    { label: "Customers", href: "/main/customer", image: Customer },
-    { label: "Jobs", href: "/main/conversation", image: Conversation },
-    { label: "Settings", href: "/main/settings", image: Settings },
+    { label: "Dashboard", href: "/", image: Dash },
+    { label: "Orders", href: "/order", image: Order },
+    { label: "Inventory", href: "/inventory", image: Inventory },
+    { label: "Customers", href: "/customer", image: Customer },
+    { label: "Jobs", href: "/conversation", image: Conversation },
+    { label: "Settings", href: "/settings", image: Settings },
 ]
 const Header = () => {
     const [rollout, setRollout] = useState(true)

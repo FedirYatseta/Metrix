@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 import { Order } from "@/image/image";
 import React from "react"
 

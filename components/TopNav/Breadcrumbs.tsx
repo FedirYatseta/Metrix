@@ -1,6 +1,6 @@
 // components/Breadcrumbs.tsx
 "use client"
-import { inter } from '@/app/fonts';
+import { inter } from '@/styles/fonts';
 import { Home } from '@/image/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'; // Use next/navigation

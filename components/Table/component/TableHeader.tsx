@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 import Checkbox from "@/components/CheckBox/Checkbox";
 import { Sort } from "@/image/image";
 import React from "react"

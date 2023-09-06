@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 import { Plus } from "@/image/image";
 import React from "react"
 

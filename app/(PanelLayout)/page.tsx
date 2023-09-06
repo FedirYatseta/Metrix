@@ -5,13 +5,9 @@ import { authConfig } from '@/configs/auth';
 import Header from '@/components/LeftNav/Header';
 
 const Home = async () => {
-  const session = await getServerSession(authConfig)
-
-  if (session == null) {
-    return redirect("/signin")
-  } else {
-    return redirect("/main/dashboard")
-  }
+  return (
+    <div>Dashboard</div>
+  )
 }
 
 export default Home

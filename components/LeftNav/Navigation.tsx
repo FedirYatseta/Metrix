@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
-import { inter } from '@/app/fonts';
+import { inter } from '@/styles/fonts';
 
 
 

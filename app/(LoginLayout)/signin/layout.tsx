@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import logo from "@/app/next.svg"
+import logo from "@/app/(PanelLayout)/next.svg"
 
 export const metadata: Metadata = {
   title: 'Metrix',

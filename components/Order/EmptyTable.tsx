@@ -1,4 +1,4 @@
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 import { Bag, Plus } from "@/image/image";
 import React from "react"
 import Button from "../Button";

@@ -1,3 +1,4 @@
+'use client'
 import { Arr, ArrDown, FilterIcon } from "@/image/image";
 import React, { ChangeEvent, useState } from "react"
 import Select, { DropdownIndicatorProps, components } from 'react-select';

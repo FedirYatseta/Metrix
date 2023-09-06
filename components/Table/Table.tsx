@@ -1,5 +1,5 @@
 'use client'
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 import { DateIcon, FilterIcon, SearchInput, ShareIcon, Sort } from "@/image/image";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Checkbox from "../CheckBox/Checkbox";

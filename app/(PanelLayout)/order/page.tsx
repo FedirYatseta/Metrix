@@ -1,5 +1,5 @@
 "use client"
-import { inter } from '@/app/fonts'
+import { inter } from '@/styles/fonts'
 import Button from '@/components/Button'
 import BlockSum from '@/components/Order/BlockSum'
 import EmptyTable from '@/components/Order/EmptyTable'

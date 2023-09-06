@@ -6,7 +6,7 @@ import { Eye, Eyeoff, Lock, Message } from "@/image/image";
 import { Field, Form, Formik, FormikHelpers } from "formik";
 import * as Yup from 'yup';
 import Link from "next/link";
-import { inter } from "@/app/fonts";
+import { inter } from "@/styles/fonts";
 
 
 interface Values {

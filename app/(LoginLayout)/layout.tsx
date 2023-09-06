@@ -1,15 +1,15 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import Providers from '@/components/Providers'
-import { poppins } from './fonts'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { poppins } from '@/styles/fonts';
 export const metadata: Metadata = {
   title: 'Metrix',
   description: 'Createt  by FedirY',
 }
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: {
   children: React.ReactNode
@@ -22,7 +22,6 @@ const RootLayout = ({
         <Providers>
           {children}
         </Providers>
-        {/* <Image src={login} alt='pixel' className='absolute  inset-y-0 left-0 z-0 opacity-50' /> */}
       </body>
 
     </html>

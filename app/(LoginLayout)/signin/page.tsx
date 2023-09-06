@@ -1,5 +1,5 @@
 import React from "react"
-import logo from "@/app/next.svg"
+import logo from "@/app/(PanelLayout)/next.svg"
 import Image from 'next/image'
 import Login from "@/components/Auth/Login";
 
