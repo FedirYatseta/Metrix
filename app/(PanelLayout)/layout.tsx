@@ -16,14 +16,11 @@ export const metadata: Metadata = {
   description: 'Createt  by FedirY',
 }
 
-const RootLayout = async ({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode
 }) => {
-  const session = await getServerSession(authConfig)
-  console.log('session', session)
-
 
   return (
     <html lang="en" className={poppins.className}>

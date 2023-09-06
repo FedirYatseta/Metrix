@@ -95,7 +95,7 @@ const Login = () => {
                         )}
                     </label>
                     <Link href="/#" className={`${inter.className} text-sm font-normal text-primary-0-0 text-right`}> Recover Password</Link>
-                    <p className="text-sm font-normal my-12 text-black-300"> Don’t have an account? <Link href="/signin/register" className="text-primary-0">  Sign Up</Link></p>
+                    <p className="text-sm font-normal my-12 text-black-300"> Don’t have an account? <Link href="/register" className="text-primary-0">  Sign Up</Link></p>
                     <button type="submit" className="rounded-xl px-16 py-4 bg-primary-0 text-white max-w-min m-auto"> Login</button>
                 </Form>)}
         </Formik>

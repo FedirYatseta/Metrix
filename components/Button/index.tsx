@@ -3,15 +3,17 @@ import { Plus } from "@/image/image";
 import React from "react"
 
 type BtnType = {
-    name: string,
-    icon: JSX.Element
+    name?: string,
+    icon: JSX.Element,
+    handleClick?: () => void
+    className?: string
 }
 
-const Button = ({ name, icon }: BtnType) => {
+const Button = ({ name, icon, handleClick, className }: BtnType) => {
     return (
-        <button className='bg-primary-0 px-4 py-2 rounded-2xl flex items-center hover:bg-hover active:bg-pressed focus:outline-none' >
+        <button onClick={handleClick} className={`bg-primary-0 px-4 py-2 rounded-2xl flex items-center hover:bg-hover active:bg-pressed focus:outline-none ${className}`} >
             {icon}
-            <span className={`${inter.className} pl-2 text-sm text-white`}> {name}</span>
+            <span className={`${inter.className} pl - 2 text - sm text - white`}> {name}</span>
         </button>
     )
 };

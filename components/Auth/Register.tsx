@@ -103,7 +103,7 @@ const Register = () => {
                     </label>
                     <p className="text-sm font-normal my-12 text-black-300"> Already have an account?  <Link href="/signin" className="text-primary-0"> Login</Link></p>
 
-                    <button type="submit" className="rounded-xl px-16 py-4 bg-primary-0 text-white max-w-min m-auto"> Login</button>
+                    <button type="submit" className="rounded-xl px-16 py-4 bg-primary-0 text-white max-w-min m-auto"> Register</button>
                 </Form>)}
         </Formik>
     )
