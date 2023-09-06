@@ -30,12 +30,11 @@ const Login = () => {
     const router = useRouter()
 
     const handleSubmitLogin = async (e: any) => {
-        console.log('eeeeeee', e);
 
         const res = await signIn('credentials', {
             email: e.email,
             password: e.password,
-            redirect: false
+            redirect: true
         })
         if (res && !res.error) {
             router.push('/')
@@ -56,10 +55,7 @@ const Login = () => {
                 values: Values,
                 { setSubmitting }: FormikHelpers<Values>
             ) => {
-
-                const res = handleSubmitLogin(values)
-                console.log('res', res)
-
+                handleSubmitLogin(values)
             }}>{({ errors, touched }) => (
                 <Form className="pt-14 flex flex-col max-w-lg w-full m-auto">
                     <label className="relative block w-96 my-4">
