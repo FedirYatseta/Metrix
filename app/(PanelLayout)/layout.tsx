@@ -25,9 +25,9 @@ const PanelLayout = ({
   return (
     <>
       <Header />
-      <div className='flex flex-col w-full'>
+      <div className='flex flex-col w-full overflow-hidden'>
         <section className='w-full bg-white'>
-          <div className='flex px-5 py-3 justify-between items-center'>
+          <div className='flex xs:px-2 lg:px-5  xs:py-1 lg:py-3 justify-between items-center'>
             <ClientComponent />
             <Panel />
           </div>

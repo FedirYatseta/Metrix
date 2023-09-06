@@ -20,11 +20,11 @@ const LoginLayout = ({
 
   return (
     <section className="h-full w-full ">
-      <div className="py-3 px-20 bg-white absolute w-full ">
+      <div className="py-3 lg:px-20 xs:px-5 bg-white absolute w-full ">
         <Image priority src={logo} alt='logo' width={50} height={50} />
       </div>
-      <div className="h-full flex items-center justify-center ">
-        <div className="bg-white p-9 rounded-xl  m-auto flex flex-col items-center">
+      <div className="h-full flex items-center justify-center xs:px-3 ">
+        <div className="bg-white xs:p-4 lg:p-9 rounded-xl  m-auto flex flex-col items-center">
           <Image priority src={logo} alt='logo' className="m-auto my-3 " width={55} height={55} />
 
           {children}

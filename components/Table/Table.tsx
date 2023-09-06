@@ -80,20 +80,21 @@ const Table = ({ height }: any) => {
 
     return (
         < >
-            <div className="pb-4 text-start flex justify-between">
-                <h6>Customer Orders </h6>
-                <div className="flex text-xs">
-                    <label className="relative block border-0">
-                        <span className="absolute inset-0 left-2 flex items-center">
+            <div className="pb-4 text-start flex justify-between xs:flex-col lg:flex-row items-center ">
+                <h6 className={`${inter.className} font-medium`}>Customer Orders </h6>
+                <div className="grid xs:grid-cols lg:grid-cols-6  gap-2 text-xs w-8/12">
+
+                    <label className="relative block border-0 h-full col-span-2">
+                        <span className="absolute inset-0 left-2 flex items-center ">
                             <SearchInput />
                         </span>
-                        <input className="rounded-md block py-1.5 px-9 w-full text-xs focus-within:hover:bg-hov focus:outline-none border border-black-100 " placeholder="Search">
+                        <input className=" h-full rounded-md block py-1.5 px-9 w-full text-xs focus-within:hover:bg-hov focus:outline-none border border-black-100 " placeholder="Search">
                         </input>
                     </label>
                     <OutlineBtn icon={<FilterIcon />} name={'Filter'} />
                     <OutlineBtn icon={<DateIcon />} name={'Date'} />
                     <OutlineBtn icon={<ShareIcon />} name={'Share'} />
-                    <OutlineSelect handleChangeFc={() => { }} name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1 mx-2" />
+                    <OutlineSelect handleChangeFc={() => { }} name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1  whitespace-nowrap" />
                 </div>
             </div>
 

@@ -22,7 +22,7 @@ const Login = () => {
 
     const [show, setShow] = useState(true);
     const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get("callbackUrl") || "/order";
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
 
     const handleShowPass = (e: any) => {
         e.preventDefault();
@@ -60,8 +60,8 @@ const Login = () => {
             ) => {
                 handleSubmitLogin(values)
             }}>{({ errors, touched }) => (
-                <Form className="pt-14 flex flex-col max-w-lg w-full m-auto">
-                    <label className="relative block w-96 my-4">
+                <Form className="pt-14 flex flex-col max-w-lg w-full m-auto ">
+                    <label className="relative block xs:w-full lg:w-96 my-4">
                         <span className="absolute inset-y-0 left-0 flex items-center px-4">
                             <Message color={""} opacity={0} />
                         </span>
@@ -76,7 +76,7 @@ const Login = () => {
                             <p className="text-danger align-start absolute text-xs">{errors.email}</p>
                         )}
                     </label>
-                    <label className="relative block w-96 my-4">
+                    <label className="relative block xs:w-full lg:w-96 my-4">
                         <span className="absolute inset-y-0 left-0 flex items-center px-4">
                             <Lock color={""} opacity={0} />
                         </span>

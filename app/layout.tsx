@@ -17,7 +17,7 @@ const RootLayout = ({
 
   return (
     <html lang="en" className={poppins.className}>
-      <body className='bg-main flex  h-screen relative' >
+      <body className='bg-main flex  h-full relative' >
         <ToastContainer />
         <Providers>
           {children}
