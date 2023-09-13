@@ -44,6 +44,7 @@ const OutlineSelect = ({ name, options, handleChangeFc, id, className }: SelectT
 
     return (
         <Select
+            isSearchable={false}
             components={{ DropdownIndicator }}
             unstyled
             styles={{
@@ -63,9 +64,11 @@ const OutlineSelect = ({ name, options, handleChangeFc, id, className }: SelectT
                         zIndex: 9999,
                         background: '#fff',
                         padding: '8px',
+                        marginLeft: '-8px',
                         fontSize: '12px',
                         borderRadius: '8px',
                         minWidth: 'max-content',
+                        border: '1px solid #cdcdcd'
                     }
                 ),
                 option: (baseStyles) => ({

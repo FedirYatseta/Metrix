@@ -33,7 +33,10 @@ const PanelLayout = ({
           </div>
           <Breadcrumbs />
         </section>
-        {children}
+        <main className='flex-col w-full h-full overflow-hidden'>
+          {children}
+        </main>
+
       </div>
     </>
   )

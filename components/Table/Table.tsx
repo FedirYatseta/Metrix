@@ -1,6 +1,6 @@
 'use client'
 import { inter } from "@/styles/fonts";
-import { DateIcon, FilterIcon, SearchInput, ShareIcon, Sort } from "@/image/image";
+import { ArrLeft, ArrRight, DateIcon, FilterIcon, SearchInput, ShareIcon, Sort } from "@/image/image";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Checkbox from "../CheckBox/Checkbox";
 import OutlineBtn from "../Button/outline";
@@ -82,7 +82,7 @@ const Table = ({ height }: any) => {
         < >
             <div className="pb-4 text-start flex justify-between xs:flex-col lg:flex-row items-center ">
                 <h6 className={`${inter.className} font-medium`}>Customer Orders </h6>
-                <div className="grid xs:grid-cols lg:grid-cols-6  gap-2 text-xs w-8/12">
+                <div className="grid xs:grid-cols lg:grid-cols-6  gap-2 text-xs  xs:w-full lg:w-8/12">
 
                     <label className="relative block border-0 h-full col-span-2">
                         <span className="absolute inset-0 left-2 flex items-center ">
@@ -94,26 +94,40 @@ const Table = ({ height }: any) => {
                     <OutlineBtn icon={<FilterIcon />} name={'Filter'} />
                     <OutlineBtn icon={<DateIcon />} name={'Date'} />
                     <OutlineBtn icon={<ShareIcon />} name={'Share'} />
-                    <OutlineSelect handleChangeFc={() => { }} name={'Bulk Action'} options={options} className="flex items-center border border-black-500 rounded-md px-2 py-1  whitespace-nowrap" />
+                    <OutlineSelect handleChangeFc={() => { }} name={'Bulk Action'} options={options} className="flex items-center justify-center text-center border border-black-500 rounded-md px-2 py-1  whitespace-nowrap" />
                 </div>
             </div>
 
-            <div className={`overflow-y-auto `} style={{ height: `${tableHeight}px` }}>
+            <div className={`overflow-y-auto `} >
                 <table className=" table-auto w-full border-collapse">
                     <TableHeader title={title} handleSort={handleSort} checkAll={checkAll} handleCheckboxChangeAll={handleCheckboxChangeAll} />
                     <TableBody sortedRows={sortedRows} selectedRows={selectedRows} handleCheckboxChange={handleCheckboxChange} updateRowsInTable={updateRowsInTable} setState={setState} />
                 </table>
 
             </div>
-            <div className={`${inter.className} border-t border-grey-1 w-full mt-1 py-2`}>
+            <div className={`${inter.className} border-t border-grey-1 w-full  pt-3 flex justify-between`}>
                 <div className="flex items-center">
-                    <select defaultValue={'10'} className="pr-7 pl-2 text-center p-1 bg-black-100 opacity-50 rounded-xl ">
-                        <option className="mx-auto" value={'10'}>10</option>
-                        <option className="mx-auto" value={'30'}>30</option>
-                        <option className="mx-auto" value={'40'}>40</option>
-                    </select>
-                    <span className={`${inter.className} text-sm text text-black-200 mx-2`}> Items per page</span>
+
+                    <OutlineSelect handleChangeFc={() => ({})}
+                        name={'10'}
+                        options={[{ value: '10', label: '10' },
+                        { value: '20', label: '20' },
+                        { value: '30', label: '30' }]}
+                        className="text-center py-0.5 bg-[#5E636614]  text-sm rounded-lg px-2" />
+                    <span className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}> Items per page</span>
                     <span className="mx-2"> 1-10 of 200 items</span>
+                </div>
+
+                <div className="flex items-center">
+                    <OutlineSelect handleChangeFc={() => ({})}
+                        name={'10'}
+                        options={[{ value: '10', label: '10' },
+                        { value: '20', label: '20' },
+                        { value: '30', label: '30' }]}
+                        className="text-center py-0.5 bg-[#5E636614]  text-sm rounded-lg px-2" />
+                    <span className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}>of 44 pages</span>
+                    <button className="p-1 mr-2"><ArrLeft /></button>
+                    <button className="p-1"><ArrRight /></button>
                 </div>
             </div>
         </>

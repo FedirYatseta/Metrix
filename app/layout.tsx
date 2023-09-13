@@ -20,6 +20,7 @@ const RootLayout = ({
       <body className='bg-main flex  h-full relative' >
         <ToastContainer />
         <Providers>
+
           {children}
         </Providers>
         {/* <Image src={login} alt='pixel' className='absolute  inset-y-0 left-0 z-0 opacity-50' /> */}

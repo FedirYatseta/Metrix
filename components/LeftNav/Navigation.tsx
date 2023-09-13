@@ -37,7 +37,9 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
                          text-xl  font-serif font-semibold  not-italic my-2
                           leading-normal tracking-normal flex items-center xs:px-2 lg:px-5 xs:py-1 lg:py-4
                            rounded-xl  max-w-xs xs:w-10/12 lg:w-full ease-in-out delay-150 duration-200`} >
-                        <link.image isActive={isActive} />
+                        <div className='w-5 h-5'>
+                            <link.image isActive={isActive} />
+                        </div>
                         {showText && <p className={`ml-4 ${inter.className} text-sm font-normal `}>{link.label}  </p>}
                     </Link>
                 )

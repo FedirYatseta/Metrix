@@ -42,14 +42,14 @@ const TableBody: React.FC<TableBodyProps> = ({ sortedRows, selectedRows, handleC
                             handleChangeFc={updateRowsInTable}
                             options={options}
                             id={item.id}
-                            className="bg-black-200  rounded-lg text-xs px-2 py-1" />
+                            className="bg-[#5E636614] rounded-lg text-xs px-2 py-1 whitespace-nowrap" />
 
                     </td>
                     {item.status === 'Completed'
-                        ? <td><span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs"> {item.status}</span> </td> : item.status === 'Pending'
-                            ? <td > <span className="text-black bg-secondary-300 py-1 px-3 rounded-lg text-xs">{item.status} </span></td> : item.status === 'In-Progress'
-                                ? <td  > <span className="text-primary-0 bg-primary-100 py-1 px-3 rounded-lg text-xs">{item.status}</span></td>
-                                : <td ><span className="text-danger bg-[#fcd8d6] py-1 px-3 rounded-lg text-xs"> {item.status} </span></td>}
+                        ? <td><span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs whitespace-nowrap"> {item.status}</span> </td> : item.status === 'Pending'
+                            ? <td > <span className="text-black bg-secondary-300 py-1 px-3 rounded-lg text-xs whitespace-nowrap">{item.status} </span></td> : item.status === 'In-Progress'
+                                ? <td  > <span className="text-primary-0 bg-primary-100 py-1 px-3 rounded-lg text-xs whitespace-nowrap">{item.status}</span></td>
+                                : <td ><span className="text-danger bg-[#fcd8d6] py-1 px-3 rounded-lg text-xs whitespace-nowrap"> {item.status} </span></td>}
 
                 </tr>
             ))}
