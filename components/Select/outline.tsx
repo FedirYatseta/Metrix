@@ -86,7 +86,8 @@ const OutlineSelect = ({ name, options, handleChangeFc, id, className }: SelectT
             options={options}
             defaultValue={selectedOption}
             onChange={handleChange}
-            className={className} />
+            className={className}
+        />
 
     )
 };
