@@ -4,57 +4,16 @@ import CSelect from "@/components/Select/select";
 import { Location, Message, Profile } from "@/image/image";
 import {  Form, Formik, FormikHelpers } from "formik";
 import React from "react";
-import * as Yup from "yup";
+
 import {state} from './state'
 import { COUNTRIES } from "@/components/Select/config";
+import { IValues } from "./interface";
 
-interface Values {
-  firstname: string;
-  lastname: string;
-  email: string;
-  phone: string;
-  address: string;
-  city: string;
-  country: string;
-  state: string;
-  code: string;
-}
 
-const SignupSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Email is required"),
-  firstname: Yup.string().required("First name is required"),
-  lastname: Yup.string().required("Last Name is required"),
-  phone: Yup.string().matches(
-    /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
-    "Invalid phone number format",
-  ),
-});
-
-const FormAccount = ({handleSubmit}: any) => {
+const FormAccount = ({errors, touched, setFieldValue, values}: any) => {
  
-
-  return (
-    <Formik
-      initialValues={{
-        firstname: "",
-        lastname: "",
-        email: "",
-        phone: "",
-        address: "",
-        city: "",
-        code: "",
-        country: "",
-        state: "",
-      }}
-      validationSchema={SignupSchema}
-      onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
-        handleSubmit(values);
-      }}
-    >
-      {({ errors, touched, setFieldValue, values }) => { 
          const handleCountryChange = (selectedOption: any, name: string) => {
           if (!selectedOption) return;
-          console.log("selectedOption", selectedOption);
           setFieldValue(name, selectedOption.value);
         };
         const options = Object.keys(COUNTRIES).map((countryCode) => {
@@ -76,17 +35,13 @@ const FormAccount = ({handleSubmit}: any) => {
           };
         });
         const item = state.map((item) => {return {value:item.country, label: item.country}} )
-        console.log('item', item)
-
         const stateItem = state.filter(country => country.country === values.country).map((item) => {
-
           const val =  item.states.map((state) => {return {value:state, label: state}}  )
-  
           return [...val]
         })
     
         return(
-        <Form className="grid grid-col gap-4 ">
+        <div className="grid grid-col gap-4 ">
           <Input
             id={"firstname"}
             name={"firstname"}
@@ -178,9 +133,8 @@ const FormAccount = ({handleSubmit}: any) => {
               defaultValue={stateItem[0]}
             />
           </div>
-        </Form>
-      )}}
-    </Formik>
+        </div>
+ 
   );
 };
 

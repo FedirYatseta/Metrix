@@ -16,7 +16,7 @@ const SignIn = async () => {
       <p className="text-black-300 pt-2 text-sm "> Login to your account</p>
       <Login />
       <div className="m-1">
-        <Button
+        <Button 
           handleClick={() => signIn("google", { callbackUrl: redirectUrl })}
           icon={<Google />}
         />

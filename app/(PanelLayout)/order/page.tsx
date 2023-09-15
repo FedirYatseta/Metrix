@@ -28,14 +28,8 @@ const block = [
 ];
 
 const Orders = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number>(0);
 
-  useLayoutEffect(() => {
-    if (ref?.current) {
-      setHeight(ref?.current.offsetHeight - 175);
-    }
-  }, [ref]);
+
   const data = true;
   return (
     <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
@@ -51,10 +45,9 @@ const Orders = () => {
         })}
       </div>
       <div
-        ref={ref}
         className="bg-white rounded-xl block xs:p-2 lg:p-5 h-auto  "
       >
-        {data ? <Table height={height} /> : <EmptyTable />}
+        {data ? <Table /> : <EmptyTable />}
       </div>
     </section>
   );

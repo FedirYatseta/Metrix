@@ -6,14 +6,15 @@ type BtnType = {
   icon?: JSX.Element;
   handleClick?: (e:any) => void;
   className?: string;
-  type: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset" | undefined;
+  children?: React.ReactNode;
 };
 
-const Button = ({ name, icon, handleClick, className,type }: BtnType) => {
+const Button = ({ name, icon, handleClick, className,type, children }: BtnType) => {
   return (
     <button type={type}
       onClick={handleClick}
-      className={`bg-primary-0 px-4 py-2 rounded-2xl flex items-center justify-center hover:bg-hover active:bg-pressed focus:outline-none ${className}`}
+      className={`bg-primary-0 px-3 py-2 rounded-2xl flex items-center justify-center hover:bg-hover active:bg-pressed focus:outline-none ${className}`}
     >
       {icon}
       {name && (
@@ -24,6 +25,7 @@ const Button = ({ name, icon, handleClick, className,type }: BtnType) => {
           {name}
         </span>
       )}
+      {children}
     </button>
   );
 };

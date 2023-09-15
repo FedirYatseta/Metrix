@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Profile from "@/image/profile 1.png";
-import { Ring } from "@/image/image";
+import Profile from "@/image/man.jpg";
+import { Logo, Ring } from "@/image/image";
 import { inter } from "@/styles/fonts";
 import OutlineSelect from "../Select/outline";
 import { useSession } from "next-auth/react";

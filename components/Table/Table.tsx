@@ -18,7 +18,7 @@ import TableHeader from "./component/TableHeader";
 import TableBody from "./component/TableBody";
 import OutlineSelect from "../Select/outline";
 
-const Table = ({ height }: any) => {
+const Table = () => {
   const [rows, setRows] = useState<Row[]>(row);
   const [state, setState] = useState<Copy>({ value: "", copied: false });
 
@@ -27,7 +27,7 @@ const Table = ({ height }: any) => {
   const [sortColumn, setSortColumn] = useState<string | null>(null);
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
-  const tableHeight = height.toString();
+
 
   const handleCheckboxChange = (id: any) => {
     const updatedSelectedRows = [...selectedRows];
@@ -100,7 +100,7 @@ const Table = ({ height }: any) => {
           <OutlineBtn icon={<DateIcon />} name={"Date"} />
           <OutlineBtn icon={<ShareIcon />} name={"Share"} />
           <OutlineSelect
-            handleChangeFc={() => {}}
+            handleChangeFc={() => { }}
             name={"Bulk Action"}
             options={options}
             className="flex items-center justify-center text-center border border-black-500 rounded-md px-2 py-1  whitespace-nowrap"
