@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 * {
   box-sizing: border-box;
 }
 
-#root, html {
-height: 100%;
+#root,
+html {
+  height: 100%;
 }
 
 body {
@@ -17,15 +16,12 @@ body {
   padding: 0;
   height: 100%;
   text-align: center;
-
 }
-
 
 main {
   height: 100%;
-  margin:  auto;
+  margin: auto;
 }
-
 
 input:checked + div {
   @apply border-primary-0;
@@ -34,5 +30,3 @@ input:checked + div {
 input:checked + div div {
   @apply flex;
 }
-
-

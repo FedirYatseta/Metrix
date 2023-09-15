@@ -1,16 +1,15 @@
-
 export interface IInput {
-    id: number;
-    icon: JSX.Element;
-    type: string;
-    name: string;
-    label: string;
-    placeholder: string;
+  id: number;
+  icon: JSX.Element;
+  type: string;
+  name: string;
+  label: string;
+  placeholder: string;
 
-    touched?: {
-        [key: string]: boolean;
-    };
-    errors?: {
-        [key: string]: string;
-    };
-};
+  touched?: {
+    [key: string]: boolean;
+  };
+  errors?: {
+    [key: string]: string;
+  };
+}

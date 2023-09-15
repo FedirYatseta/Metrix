@@ -1,7 +1,5 @@
 {
-    "cSpell.words": [
-        "formik",
-        "tailwindcss"
-    ],
-    "autoimport.useSemiColon": true
+  "cSpell.words": ["formik", "tailwindcss"],
+  "autoimport.useSemiColon": true,
+  "prettier.configPath": ""
 }

@@ -1,11 +1,13 @@
-'use client'
+"use client";
 
-import { useSelectedLayoutSegment } from 'next/navigation'
+import { useSelectedLayoutSegment } from "next/navigation";
 
 const ClientComponent = () => {
-    const segment = useSelectedLayoutSegment()
+  const segment = useSelectedLayoutSegment();
 
-    return <p className='capitalize text-xl text-black-700 font-medium'>{segment}</p>
-}
+  return (
+    <p className="capitalize text-xl text-black-700 font-medium">{segment}</p>
+  );
+};
 
-export default ClientComponent
+export default ClientComponent;
