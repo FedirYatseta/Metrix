@@ -13,12 +13,15 @@ const Panel = () => {
 
   return (
     <div className="flex items-center">
-      <OutlineSelect
-        name={"Nanny’s Shop"}
-        handleChangeFc={() => {}}
-        options={[{ value: "Nanny’s Shop", label: "Nanny’s Shop" }]}
-        className={`${inter.className}  text-sm bg-secondary-200 px-3 py-1 rounded-xl  w-36`}
-      />
+      <div className="flex w-full  bg-secondary-200 rounded-xl px-3">
+        <OutlineSelect
+          name={"Nanny’s Shop"}
+          handleChangeFc={() => { }}
+          options={[{ value: "Nanny’s Shop", label: "Nanny’s Shop" }]}
+          className={`${inter.className}  text-sm  py-1    whitespace-nowrap`}
+        />
+      </div>
+
       <div className="px-4">
         {" "}
         <Ring />{" "}

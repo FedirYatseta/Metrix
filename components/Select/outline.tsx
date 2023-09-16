@@ -1,5 +1,5 @@
 "use client";
-import { Arr, ArrDown, FilterIcon } from "@/image/image";
+import { ArrDown } from "@/image/image";
 import React, { ChangeEvent, useState } from "react";
 import Select, { DropdownIndicatorProps, components } from "react-select";
 import { OptionsSelect } from "./interfaces";
@@ -58,6 +58,7 @@ const OutlineSelect = ({
         control: (baseStyles) => ({
           ...baseStyles,
           minHeight: 0,
+          minWidth: '40px',
         }),
         indicatorsContainer: (baseStyles) => ({
           ...baseStyles,
@@ -68,7 +69,6 @@ const OutlineSelect = ({
           zIndex: 9999,
           background: "#fff",
           padding: "8px",
-          marginLeft: "-8px",
           fontSize: "12px",
           borderRadius: "8px",
           minWidth: "max-content",
@@ -77,6 +77,7 @@ const OutlineSelect = ({
         option: (baseStyles) => ({
           ...baseStyles,
           padding: "5px",
+
           whiteSpace: "nowrap",
 
           ":hover": {

@@ -103,7 +103,7 @@ const Table = () => {
             handleChangeFc={() => { }}
             name={"Bulk Action"}
             options={options}
-            className="flex items-center justify-center text-center border border-black-500 rounded-md px-2 py-1  whitespace-nowrap"
+            className="flex items-center justify-center text-center border border-black-500 rounded-md py-1  whitespace-nowrap"
           />
         </div>
       </div>
@@ -126,19 +126,21 @@ const Table = () => {
         </table>
       </div>
       <div
-        className={`${inter.className} border-t border-grey-1 w-full  pt-3 flex justify-between`}
+        className={`${inter.className} border-t border-grey-1 w-full  pt-3 grid grid-cols-2 justify-between items-center`}
       >
-        <div className="flex items-center">
-          <OutlineSelect
-            handleChangeFc={() => ({})}
-            name={"10"}
-            options={[
-              { value: "10", label: "10" },
-              { value: "20", label: "20" },
-              { value: "30", label: "30" },
-            ]}
-            className="text-center py-0.5 bg-[#5E636614]  text-sm rounded-lg px-2"
-          />
+        <div className="flex justify-start items-center" >
+          <div className=" block text-center  bg-[#5E636614]  text-sm rounded-lg px-2 relative">
+            <OutlineSelect
+              handleChangeFc={() => ({})}
+              name={"10"}
+              options={[
+                { value: "10", label: "10" },
+                { value: "20", label: "20" },
+                { value: "30", label: "30" },
+              ]}
+              className=" block  py-0.5  text-sm  "
+            />
+          </div>
           <span
             className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}
           >
@@ -148,17 +150,19 @@ const Table = () => {
           <span className="mx-2"> 1-10 of 200 items</span>
         </div>
 
-        <div className="flex items-center">
-          <OutlineSelect
-            handleChangeFc={() => ({})}
-            name={"10"}
-            options={[
-              { value: "10", label: "10" },
-              { value: "20", label: "20" },
-              { value: "30", label: "30" },
-            ]}
-            className="text-center py-0.5 bg-[#5E636614]  text-sm rounded-lg px-2"
-          />
+        <div className="flex justify-end items-center">
+          <div className=" px-2  text-center  bg-[#5E636614]  text-sm rounded-lg">
+            <OutlineSelect
+              handleChangeFc={() => ({})}
+              name={"10"}
+              options={[
+                { value: "10", label: "10" },
+                { value: "20", label: "20" },
+                { value: "30", label: "30" },
+              ]}
+              className="text-center  text-sm py-0.5 "
+            />
+          </div>
           <span
             className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}
           >

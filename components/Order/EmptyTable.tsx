@@ -1,23 +1,31 @@
 import { inter } from "@/styles/fonts";
 import { Bag, Plus } from "@/image/image";
-import React from "react";
+import React, { FC } from "react";
 import Button from "../Button";
 
-const EmptyTable = () => {
+interface IEmptyElement {
+  icon?: JSX.Element;
+  title: string;
+  describe: string;
+  name: string;
+  iconBtn?: JSX.Element;
+}
+
+const EmptyElement: FC<IEmptyElement> = ({ icon, title, describe, name, iconBtn }) => {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <div className="bg-main rounded-full border-2 border-grey-1 flex items-center justify-center p-9">
-        <Bag />
+        {icon}
       </div>
-      <h4 className="text-xl font-medium pt-9 ">No Orders Yet?</h4>
+      <h4 className="text-xl font-medium pt-9 ">{title}</h4>
       <h6
         className={` ${inter.className} text-black-300 text-md font-normal w-72 pt-3 pb-6`}
       >
-        Add products to your store and start selling to see orders here.
+        {describe}
       </h6>
-      <Button name=" New Product" icon={<Plus />} />
+      <Button name={name} icon={iconBtn} />
     </div>
   );
 };
 
-export default EmptyTable;
+export default EmptyElement;

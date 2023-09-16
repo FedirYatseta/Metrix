@@ -45,13 +45,15 @@ const TableBody: React.FC<TableBodyProps> = ({
           </td>
           <td>{item.sum}</td>
           <td>
-            <OutlineSelect
-              name={item.action}
-              handleChangeFc={updateRowsInTable}
-              options={options}
-              id={item.id}
-              className="bg-[#5E636614] rounded-lg text-xs px-2 py-1 whitespace-nowrap"
-            />
+            <div className="bg-[#5E636614] rounded-lg text-xs px-2 py-1 whitespace-nowrap">
+              <OutlineSelect
+                name={item.action}
+                handleChangeFc={updateRowsInTable}
+                options={options}
+                id={item.id}
+                className=""
+              />
+            </div>
           </td>
           {item.status === "Completed" ? (
             <td>
