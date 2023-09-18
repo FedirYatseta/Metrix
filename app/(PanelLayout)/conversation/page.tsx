@@ -44,6 +44,69 @@ const data = [
     lastMessage: 'Hi, i want make enquiries about your product',
     time: '2:30pm'
   },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'John Doe',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
 ]
 
 const Orders = () => {
@@ -51,9 +114,9 @@ const Orders = () => {
   return (<section className="flex flex-col flex-auto  overflow-y-auto h-full">
     <div className="rounded-md w-full flex flex-col flex-auto p-4">
       <HeaderGeneral name={'New Message'} title={'Conversations with Customers'} />
-      <div className=" h-full flex flex-col flex-auto ">
+      <div className=" h-full flex flex-col flex-auto  ">
         <div className="grid xs:grid-col lg:grid-cols-3 gap-4 mt-2 h-full ">
-          <div className="col-span-1 bg-white rounded-xl p-6 ">
+          <div className="flex flex-col col-span-1 bg-white rounded-xl p-6 ">
             <div className="flex justify-between flex-col">
               <div className="flex justify-between">
                 <h5 className="text-xl font-medium">Contacts</h5>
@@ -71,7 +134,10 @@ const Orders = () => {
                 placeholder="Search"
               ></input>
             </label>
-            <ChatBlock data={data} />
+            <div className="flex flex-col flex-initial  xs:max-h-[410px] lg:max-h-[510px] xl:max-h-[610px] overflow-scroll">
+              <ChatBlock data={data} />
+            </div>
+
           </div>
           <div className="lg:col-span-2 bg-white rounded-xl  p-6">
             <EmptyTable
