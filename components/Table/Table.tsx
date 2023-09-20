@@ -126,9 +126,9 @@ const Table = () => {
         </table>
       </div>
       <div
-        className={`${inter.className} border-t border-grey-1 w-full  pt-3 grid grid-cols-2 justify-between items-center`}
+        className={`${inter.className} border-t border-grey-1 w-full  pt-3 grid xs:grid-col md:grid-cols-2 justify-between items-center`}
       >
-        <div className="flex justify-start items-center" >
+        <div className="flex md:justify-start items-center xs:py-1 lg:py-0" >
           <div className=" block text-center  bg-[#5E636614]  text-sm rounded-lg px-2 relative">
             <OutlineSelect
               handleChangeFc={() => ({})}
@@ -141,16 +141,16 @@ const Table = () => {
               className=" block  py-0.5  text-sm  "
             />
           </div>
-          <span
-            className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}
+          <p
+            className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap xs:hidden lg:block`}
           >
             {" "}
             Items per page
-          </span>
-          <span className="mx-2"> 1-10 of 200 items</span>
+          </p>
+          <p className="mx-2"> 1-10 of 200 items</p>
         </div>
 
-        <div className="flex justify-end items-center">
+        <div className="flex md:justify-end items-center">
           <div className=" px-2  text-center  bg-[#5E636614]  text-sm rounded-lg">
             <OutlineSelect
               handleChangeFc={() => ({})}
@@ -163,11 +163,11 @@ const Table = () => {
               className="text-center  text-sm py-0.5 "
             />
           </div>
-          <span
+          <p
             className={`${inter.className} text-sm text text-black-200 mx-2 whitespace-nowrap`}
           >
             of 44 pages
-          </span>
+          </p>
           <button className="p-1 mr-2">
             <ArrLeft />
           </button>

@@ -69,6 +69,57 @@ const data = [
     lastMessage: 'Hi, i want make enquiries about your product',
     time: '2:30pm'
   },
+  {
+    id: 7,
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'Janet Adebayo',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    id: 8,
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'Janet Adebayo',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    id: 9,
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'Janet Adebayo',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+  {
+    id: 10,
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'Janet Adebayo',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
+
+  {
+    id: 11,
+    logoUsers: <Image src={logoUsers} alt="logo" className=" min-h-[48px] min-w-[48px] rounded-xl" />,
+    active: true,
+    nameUser: 'Janet Adebayo',
+    newMessage: true,
+    countNewMessage: 2,
+    lastMessage: 'Hi, i want make enquiries about your product',
+    time: '2:30pm'
+  },
 
 ]
 
@@ -109,8 +160,10 @@ const Orders = () => {
                 placeholder="Search"
               ></input>
             </label>
-            <div className="flex flex-col flex-initial  xs:max-h-[410px] lg:max-h-[510px] xl:max-h-[610px] overflow-y-scroll">
-              <ChatBlock data={data} setSelectUser={setSelectUserId} />
+            <div className="flex flex-col flex-initial  h-full max-h-[calc(100vh-322px)] overflow-auto ">
+              <div className="overflow-auto">
+                <ChatBlock data={data} setSelectUser={setSelectUserId} />
+              </div>
             </div>
 
           </div>
