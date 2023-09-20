@@ -24,7 +24,6 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
       )}
       <label className="relative block xs:w-full  my-2">
         <span className="absolute inset-y-0 left-0 flex items-center px-4">
-          {/* <Message color={""} opacity={0} /> */}
           {icon}
         </span>
         {type === "tel" ? (
@@ -33,17 +32,15 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
             type={type}
             name={name}
             placeholder={placeholder}
-            className={`rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${
-              touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
-            } ${className}   `}
+            className={`rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
+              } ${className}   `}
           >
             {({ field }: any) => (
               <InputMask
-                className={`rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${
-                  touched[name] && errors[name]
+                className={`rounded-lg block py-3 px-12 w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name]
                     ? "bg-[#FCF3F2B2]"
                     : "bg-black-950"
-                } ${className}   `}
+                  } ${className}   `}
                 {...field}
                 mask="999-999-9999" // Define your phone number mask here
                 placeholder="232-456-7890"
@@ -60,11 +57,10 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
             placeholder={placeholder}
             className={`rounded-lg block
                          py-3 px-12 w-full focus-within:hover:bg-hov
-                          focus:outline-none ${
-                            touched[name] && errors[name]
-                              ? "bg-[#FCF3F2B2]"
-                              : "bg-black-950"
-                          } ${className}   `}
+                          focus:outline-none ${touched[name] && errors[name]
+                ? "bg-[#FCF3F2B2]"
+                : "bg-black-950"
+              } ${className}   `}
           />
         )}
 
