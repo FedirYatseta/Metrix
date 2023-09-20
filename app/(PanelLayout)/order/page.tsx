@@ -41,7 +41,7 @@ const Orders = () => {
         })}
       </div>
       <div
-        className="bg-white rounded-xl block xs:p-2 lg:p-5 h-auto  "
+        className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
       >
         {data ? <Table /> : <EmptyTable
           name='New Product'

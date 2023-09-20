@@ -15,7 +15,8 @@ const TableBody: React.FC<TableBodyProps> = ({
   setState,
 }) => {
   return (
-    <tbody>
+
+    <tbody className={`overflow-y-auto `}>
       {sortedRows.map((item, key) => (
         <tr key={key} className="h-12">
           <td>
@@ -87,6 +88,7 @@ const TableBody: React.FC<TableBodyProps> = ({
         </tr>
       ))}
     </tbody>
+
   );
 };
 

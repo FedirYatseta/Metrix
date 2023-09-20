@@ -41,7 +41,7 @@ const ChatDashboard = ({ name }: any) => {
 
                 </div>
             </div>
-            <div className="flex flex-initial h-full max-h-[calc(100vh-362px)] overflow-auto">
+            <div className="flex flex-initial h-full max-h-[calc(100vh-462px)] overflow-auto">
                 <div className="grid grid-cols-1 space-y-12  w-full mx-auto overflow-y-auto">
                     <div className="place-self-start w-1/2">
                         <div className="p-4 bg-primary-0 text-white text-start rounded-tl-lg rounded-tr-lg

@@ -108,8 +108,8 @@ const Table = () => {
         </div>
       </div>
 
-      <div className={`overflow-y-auto `}>
-        <table className=" table-auto w-full border-collapse">
+      <div className="max-h-[calc(100vh-482px)] overflow-auto h-full">
+        <table className=" table-auto w-full border-collapse  ">
           <TableHeader
             title={title}
             handleSort={handleSort}
