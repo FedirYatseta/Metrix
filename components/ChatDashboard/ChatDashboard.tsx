@@ -7,7 +7,7 @@ import React from "react"
 //
 
 const ChatDashboard = ({ name }: any) => {
-    console.log('user1', name)
+
 
 
     return (
@@ -28,7 +28,7 @@ const ChatDashboard = ({ name }: any) => {
                         <div className="flex items-center">
                             {name.active ? <ActiveIcon /> : <InActiveIcon />}
                             <p className="mx-1">
-                                Online
+                                {name.active ? 'Active' : 'Inactive'}
                             </p>
                             <p className=" text-black-700 font-normal text-sm ">{name.time}</p>
                         </div>

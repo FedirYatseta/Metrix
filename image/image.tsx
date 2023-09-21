@@ -1212,3 +1212,50 @@ export const SmileIcon = () => {
     </svg>
   )
 }
+
+export const Folder = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5191 12.1101C17.5191 15.0918 15.7616 16.8493 12.7799 16.8493H6.29492C3.30576 16.8493 1.54492 15.0918 1.54492 12.1101V5.61008C1.54492 2.63258 2.63992 0.875084 5.62242 0.875084H7.28909C7.88742 0.875917 8.45076 1.15675 8.80909 1.63592L9.56992 2.64758C9.92992 3.12592 10.4933 3.40758 11.0916 3.40842H13.4499C16.4391 3.40842 17.5424 4.93008 17.5424 7.97258L17.5191 12.1101Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.9043 11.0525H13.1835" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}
+
+export const Graph = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3986 10.5743C13.9609 10.5743 14.4328 11.0384 14.3468 11.5936C13.8424 14.8603 11.0459 17.2857 7.67313 17.2857C3.94155 17.2857 0.916992 14.2612 0.916992 10.5305C0.916992 7.45677 3.25208 4.59362 5.88103 3.94625C6.44594 3.80677 7.02489 4.20414 7.02489 4.78572C7.02489 8.72607 7.15734 9.74537 7.90559 10.2998C8.65383 10.8541 9.53366 10.5743 13.3986 10.5743Z" stroke="#5570F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0778 7.293C17.1225 4.76142 14.0128 0.680718 10.2234 0.750893C9.92864 0.756156 9.69267 1.00177 9.67952 1.29563C9.5839 3.37721 9.71285 6.07458 9.78478 7.29738C9.80671 7.67809 10.1058 7.97721 10.4857 7.99914C11.7427 8.07107 14.5383 8.16931 16.59 7.85879C16.869 7.81668 17.0734 7.57458 17.0778 7.293Z" stroke="#5570F1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}
+
+export const User = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.65967 11.6723C9.73384 11.6723 12.3613 12.1382 12.3613 13.999C12.3613 15.8598 9.75134 16.339 6.65967 16.339C3.58467 16.339 0.958008 15.8773 0.958008 14.0157C0.958008 12.154 3.56717 11.6723 6.65967 11.6723Z" stroke="#1C1D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.65988 9.01649C4.64155 9.01649 3.00488 7.38066 3.00488 5.36233C3.00488 3.34399 4.64155 1.70816 6.65988 1.70816C8.67738 1.70816 10.314 3.34399 10.314 5.36233C10.3215 7.37316 8.69655 9.00899 6.68572 9.01649H6.65988Z" stroke="#1C1D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.4023 8.06799C13.7365 7.88049 14.764 6.73549 14.7665 5.34966C14.7665 3.98382 13.7707 2.85049 12.4648 2.63632" stroke="#1C1D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.1631 11.2768C15.4556 11.4693 16.3581 11.9227 16.3581 12.856C16.3581 13.4985 15.9331 13.9152 15.2464 14.176" stroke="#1C1D22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}
+
+
+export const ShoppingIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+      <g clip-path="url(#clip0_288_3020)">
+        <path d="M17.3363 18.3333C17.7965 18.3333 18.1696 17.9602 18.1696 17.5C18.1696 17.0398 17.7965 16.6667 17.3363 16.6667C16.876 16.6667 16.5029 17.0398 16.5029 17.5C16.5029 17.9602 16.876 18.3333 17.3363 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.17025 18.3333C8.63048 18.3333 9.00358 17.9602 9.00358 17.5C9.00358 17.0398 8.63048 16.6667 8.17025 16.6667C7.71001 16.6667 7.33691 17.0398 7.33691 17.5C7.33691 17.9602 7.71001 18.3333 8.17025 18.3333Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1.50293 0.833332H4.83626L7.0696 11.9917C7.1458 12.3753 7.35452 12.72 7.65922 12.9652C7.96391 13.2105 8.34518 13.3408 8.73626 13.3333H16.8363C17.2273 13.3408 17.6086 13.2105 17.9133 12.9652C18.218 12.72 18.4267 12.3753 18.5029 11.9917L19.8363 5H5.6696" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_288_3020">
+          <rect width="20" height="20" fill="white" transform="translate(0.669922)" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
