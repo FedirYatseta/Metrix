@@ -76,6 +76,7 @@ const config: Config = {
         900: "#2C2D33",
         950: "rgba(239, 241, 249, 0.60)",
       },
+      bgRed: '#F57E771F',
       success: "#519C66",
       deny: "#CC5F5F",
       main: "#F4F5FA",

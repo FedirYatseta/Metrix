@@ -10,6 +10,9 @@ import { inter, poppins } from "@/styles/fonts";
 import { PieChart } from "react-minimal-pie-chart";
 import OutlineSelect from "@/components/Select/outline";
 import InfoBlock from "@/components/InfoBlock/InfoBlock";
+import Image from "next/image";
+import ImageIcon from "../../image/ihone.png";
+import OrderBlock from "@/components/OrderBlock/OrderBlock";
 
 const data1 = [{ label: 'Customers', value: 0 }, { label: 'Active', value: 0 }]
 
@@ -18,8 +21,22 @@ const data2 = [{ label: 'Sales', value: 0 }, { label: 'Volume', value: 0 }]
 const data3 = [{ label: 'All Orders', value: 0 }, { label: 'Pending', value: 0 }, { label: 'Completed', value: 0 }]
 const data4 = [{ label: 'Abandoned Cart', value: 0 }, { label: 'Customers', value: 0 }]
 
+const data5 = [{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
+{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon }]
 
 const Home = async () => {
+  const isProduct = false;
   return <section className="p-4 h-full">
     <div className="flex flex-col flex-initial h-full">
       <div className="grid  grid-rows-5 grid-cols-3 	grid-flow-col auto-cols-max h-full  gap-4">
@@ -88,14 +105,18 @@ const Home = async () => {
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data3} icon={<BagIcon />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl row-span-4 p-5">
+        <div className="bg-white rounded-xl row-span-4 p-5 overflow-y-auto">
           <h2 className={`${inter.className} font-medium text-md text-start `}>Recent Order</h2>
-          <EmptyElement
-            name='No Orders Yet?'
-            iconBtn={<Plus />}
-            icon={<Bag />} title={'No Orders Yet?'}
-            describe="Add products to your store and start selling to see orders here."
-          />
+          <div className="overflow-y-auto">
+            {isProduct ? (<EmptyElement
+              name='No Orders Yet?'
+              iconBtn={<Plus />}
+              icon={<Bag />} title={'No Orders Yet?'}
+              describe="Add products to your store and start selling to see orders here."
+            />) :
+              (<OrderBlock data={data5} />)
+            }
+          </div>
         </div>
       </div>
     </div>
