@@ -14,7 +14,7 @@ const OrderBlock: FC<IOrderBlock> = ({ data }) => {
         <>
             {
                 data.map((item, index) => (
-                    <div className={`${inter.className} flex items-center border-b pb-3 border-stroke my-2`}>
+                    <div key={index} className={`${inter.className} flex items-center border-b pb-3 border-stroke my-2`}>
                         <div className="rounded-lg border-stroke mr-3 h-full w-full max-h-[49px] max-w-[49px] ">
                             <Image src={ImageIcon} height={49} width={49} alt="Picture of the author" />
                         </div>
