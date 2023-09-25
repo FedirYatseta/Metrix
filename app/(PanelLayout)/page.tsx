@@ -35,6 +35,14 @@ const data5 = [{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', 
 { title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon },
 { title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', status: 'Pending', icon: ImageIcon }]
 
+const data6 = [
+  { sum: 80, date: 'Sept 10' },
+  { sum: 25, date: 'Sept 11' },
+  { sum: 75, date: 'Sept 12' },
+  { sum: 60, date: 'Sept 13' },
+  { sum: 50, date: 'Sept 14' },
+  { sum: 50, date: 'Sept 15' }]
+
 const Home = async () => {
   const isProduct = false;
   return <section className="p-4 h-full">
@@ -43,7 +51,7 @@ const Home = async () => {
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-primary-960'} data={data2} icon={<Graph />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl lg:row-span-2 p-5 max-h-[300px]">
+        <div className="bg-white rounded-xl lg:row-span-2 p-5 xs:max-h-[400px] lg:max-h-max">
           <div className={`flex items-center justify-between ${inter.className}`}>
             <h2 className=" font-medium text-md text-start "> Marketing</h2>
             <OutlineSelect
@@ -65,8 +73,40 @@ const Home = async () => {
               { title: 'Two', value: 15, color: '#97A5EB' },
               { title: 'Three', value: 20, color: '#FFCC91' },
             ]}
-          /> </div>
-        <div className="bg-white rounded-xl lg:row-span-2 lg:col-span-2">3</div>
+          />
+        </div>
+        <div className="bg-white rounded-xl lg:row-span-2 lg:col-span-2 p-5">
+          <div className="flex flex-col h-full">
+            <div className={`flex items-center justify-between ${inter.className} pb-3`}>
+              <h2 className=" font-medium text-md text-start "> Summary</h2>
+              <OutlineSelect
+                handleChangeFc={() => ({})}
+                name="Last 7 Days"
+                options={[{ value: "Shop", label: "shop" }]}
+                className="text-black-200  text-sm"
+              />
+            </div>
+
+            <div className={`flex justify-between h-full xs:min-h-[400px] lg:min-h-max `}>
+              {data6.map((item, index) => {
+                const percentage = (percent: any, total: any) => {
+                  return ((percent / 100) * total)
+                }
+                const percentResult = percentage(item.sum, 100).toString();
+
+                return (
+                  <div key={index} className="text-center w-full h-full flex flex-col items-center">
+                    <div className="bg-grey-2 rounded-xl mx-3 max-w-[14px] h-full w-full flex rotate-180 ">
+                      <span style={{ height: `${percentResult}%` }} className={` rounded-t-xl w-full bg-primary-0`}></span>
+                    </div>
+                    <p className={`${inter.className} text-xs text-black-100 pt-3 `}>{item.date}</p>
+                  </div>
+                )
+              }
+              )}
+            </div>
+          </div>
+        </div>
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data1} icon={<User />} options={[{ value: "Shop", label: "shop" }]} />
         </div>

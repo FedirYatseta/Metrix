@@ -61,6 +61,7 @@ const config: Config = {
       danger: "#F57E77",
       grey: "#5E63661A",
       "grey-1": "#E1E2E9",
+      'grey-2': '#EEF0FA',
       "white-yellow": "#FFCC9133",
       stroke: "#F1F3F9",
       black: {
