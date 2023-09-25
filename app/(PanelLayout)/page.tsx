@@ -1,18 +1,17 @@
 'use client';
 import React from "react";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth/next";
-import { authConfig } from "@/configs/auth";
-import Header from "@/components/LeftNav/Header";
 import { Bag, BagIcon, Folder, Graph, Plus, ShoppingIcon, User } from "@/image/image";
 import EmptyElement from "@/components/Order/EmptyTable";
 import { inter, poppins } from "@/styles/fonts";
 import { PieChart } from "react-minimal-pie-chart";
 import OutlineSelect from "@/components/Select/outline";
 import InfoBlock from "@/components/InfoBlock/InfoBlock";
-import Image from "next/image";
 import ImageIcon from "../../image/ihone.png";
 import OrderBlock from "@/components/OrderBlock/OrderBlock";
+import { useGetAlbumsListQuery, useGetPostsListQuery } from "@/store/api/api";
+import { useRouter } from "next/navigation";
+
+
 
 const data1 = [{ label: 'Customers', value: 0 }, { label: 'Active', value: 0 }]
 
@@ -45,6 +44,10 @@ const data6 = [
 
 const Home = async () => {
   const isProduct = false;
+
+
+
+
   return <section className="p-4 h-full">
     <div className="flex flex-col flex-initial h-full overflow-auto">
       <div className="grid  lg:grid-rows-5 lg:grid-cols-3 	lg:grid-flow-col lg:auto-cols-max h-full  gap-4">

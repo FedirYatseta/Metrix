@@ -1,11 +1,11 @@
 export interface Row {
-  id: number;
+  id?: any;
   name: string;
-  date: string;
-  type: string;
-  track: string;
-  sum: string;
-  action: string;
+  date?: string;
+  type?: string;
+  track?: string;
+  sum?: string;
+  action?: string;
   status: string;
 }
 

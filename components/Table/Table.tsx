@@ -9,17 +9,21 @@ import {
   ShareIcon,
   Sort,
 } from "@/image/image";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Checkbox from "../CheckBox/Checkbox";
+import React, { useState } from "react";
 import OutlineBtn from "../Button/outline";
 import { Row, Copy } from "./interface";
-import { options, row, title } from "./index.config";
+import { options, } from "./index.config";
 import TableHeader from "./component/TableHeader";
 import TableBody from "./component/TableBody";
 import OutlineSelect from "../Select/outline";
 
-const Table = () => {
-  const [rows, setRows] = useState<Row[]>(row);
+
+
+
+const Table = ({ data, title }: any) => {
+
+
+  const [rows, setRows] = useState<Row[]>(data);
   const [state, setState] = useState<Copy>({ value: "", copied: false });
 
   const [checkAll, setCheckAll] = useState(false);

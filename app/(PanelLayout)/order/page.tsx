@@ -7,8 +7,9 @@ import Table from "@/components/Table/Table";
 import { Bag, Bags, Order, Plus } from "@/image/image";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import HeaderGeneral from "@/components/HeaderGeneral/HeaderGeneral";
+import { row, title } from "@/components/Table/index.config";
 
-const block = [
+export const block = [
   {
     orders: "All Orders",
     pending: "Pending",
@@ -43,7 +44,7 @@ const Orders = () => {
       <div
         className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
       >
-        {data ? <Table /> : <EmptyTable
+        {data ? <Table data={row} title={title} /> : <EmptyTable
           name='New Product'
           iconBtn={<Plus />}
           icon={<Bag />} title={'No Orders Yet?'}
