@@ -6,7 +6,7 @@ const ClientComponent = () => {
   const segment = useSelectedLayoutSegment();
 
   return (
-    <p className="capitalize text-xl text-black-700 font-medium">{segment}</p>
+    <p className="capitalize text-xl text-black-700 font-medium xs:opacity-0 lg:opacity-100">{segment}</p>
   );
 };
 
