@@ -21,11 +21,10 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
 
   return (
     <nav
-      className={`w-full flex flex-col ${
-        !rollout
+      className={`w-full flex flex-col ${!rollout
           ? " justify-start  items-start"
           : " justify-center  items-center"
-      }   xs:mt-2 lg:mt-7 `}
+        }   xs:mt-2 lg:mt-7 `}
     >
       {navLinks.map((link) => {
         const isActive: boolean = pathname === link.href;
@@ -34,9 +33,8 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
           <Link
             href={link.href}
             key={link.label}
-            className={`${
-              isActive ? "bg-primary-0 text-white" : "bg-white text-black"
-            }
+            className={`${isActive ? "bg-primary-0 text-white" : "bg-white text-black"
+              }
                         ${showText ? "justify-start" : "justify-center"}
                          text-xl  font-serif font-semibold  not-italic my-2
                           leading-normal tracking-normal flex items-center xs:px-2 lg:px-5 xs:py-1 lg:py-4

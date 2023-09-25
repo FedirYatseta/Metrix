@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Navigation } from "./Navigation";
 import {
   Dash,
@@ -24,33 +24,26 @@ const navItems = [
   { label: "Jobs", href: "/conversation", image: Conversation },
   { label: "Settings", href: "/settings", image: Settings },
 ];
-const Header = () => {
-  const [rollout, setRollout] = useState(true);
-  const [showText, setShowText] = useState(true);
 
-  // Add a delay before showing the text after the rollout animation
-  useEffect(() => {
-    const delay = rollout === false ? 400 : 0; // Adjust this to your animation duration
-    setTimeout(() => {
-      setShowText(!showText);
-    }, delay);
-  }, [rollout]);
-  const handleOpen = () => {
-    setRollout(!rollout);
-  };
+interface IHeader {
+  handleOpen: () => void;
+  rollout: boolean;
+  showText: boolean;
+
+}
+const Header: FC<IHeader> = ({ handleOpen, rollout, showText }) => {
+
   return (
     <header
-      className={`bg-white h-full ease-in-out delay-150 duration-200  flex flex-col  justify-between ${
-        rollout
-          ? "xs:w-20 lg:w-24 xs:px-1 lg:px-4"
-          : "xs:w-48 lg:w-96  xs:px-2 lg:px-8"
-      }`}
+      className={`bg-white h-full ease-in-out delay-150 duration-200   flex  flex-col  justify-between ${rollout
+        ? "xs:w-20 lg:w-24 xs:px-1 lg:px-4 "
+        : "xs:w-20 lg:w-96  xs:px-2 lg:px-8 xs:hidden lg:flex"
+        }`}
     >
       <div>
         <div
-          className={`flex items-center ${
-            rollout && "justify-center"
-          } cursor-pointer  py-3`}
+          className={`flex items-center ${rollout && "justify-center"
+            } cursor-pointer  py-3`}
           onClick={handleOpen}
         >
           <Logo color="" opacity={1} />
@@ -64,9 +57,8 @@ const Header = () => {
       </div>
       <div>
         <Link
-          className={`py-3 px-4 flex items-center ${
-            rollout && "justify-center"
-          } bg-grey rounded-2xl  my-2`}
+          className={`py-3 px-4 flex items-center ${rollout && "justify-center"
+            } bg-grey rounded-2xl  my-2`}
           href="#"
         >
           <HeadPhones />
@@ -77,9 +69,8 @@ const Header = () => {
           )}
         </Link>
         <Link
-          className={`py-3 px-4 flex items-center ${
-            rollout && "justify-center"
-          } bg-white-yellow rounded-2xl my-2`}
+          className={`py-3 px-4 flex items-center ${rollout && "justify-center"
+            } bg-white-yellow rounded-2xl my-2`}
           href="#"
         >
           <Gift />
@@ -90,9 +81,8 @@ const Header = () => {
           )}
         </Link>
         <Link
-          className={`py-10 px-5 flex items-center ${
-            rollout && "justify-center"
-          }`}
+          className={`py-10 px-5 flex items-center ${rollout && "justify-center"
+            }`}
           href="/api/auth/signout"
         >
           <Logout />

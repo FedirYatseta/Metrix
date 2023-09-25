@@ -38,12 +38,12 @@ const data5 = [{ title: 'iPhone 13', date: '12 Sept 2022', price: '730,000.00', 
 const Home = async () => {
   const isProduct = false;
   return <section className="p-4 h-full">
-    <div className="flex flex-col flex-initial h-full">
-      <div className="grid  grid-rows-5 grid-cols-3 	grid-flow-col auto-cols-max h-full  gap-4">
+    <div className="flex flex-col flex-initial h-full overflow-auto">
+      <div className="grid  lg:grid-rows-5 lg:grid-cols-3 	lg:grid-flow-col lg:auto-cols-max h-full  gap-4">
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-primary-960'} data={data2} icon={<Graph />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl row-span-2 p-5">
+        <div className="bg-white rounded-xl lg:row-span-2 p-5 max-h-[300px]">
           <div className={`flex items-center justify-between ${inter.className}`}>
             <h2 className=" font-medium text-md text-start "> Marketing</h2>
             <OutlineSelect
@@ -66,7 +66,7 @@ const Home = async () => {
               { title: 'Three', value: 20, color: '#FFCC91' },
             ]}
           /> </div>
-        <div className="bg-white rounded-xl row-span-2 col-span-2">3</div>
+        <div className="bg-white rounded-xl lg:row-span-2 lg:col-span-2">3</div>
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data1} icon={<User />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
@@ -105,7 +105,7 @@ const Home = async () => {
         <div className="bg-white rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data3} icon={<BagIcon />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl row-span-4 p-5 overflow-y-auto">
+        <div className="bg-white rounded-xl lg:row-span-4 p-5 overflow-y-auto min-h-[350px]">
           <h2 className={`${inter.className} font-medium text-md text-start `}>Recent Order</h2>
           <div className="overflow-y-auto">
             {isProduct ? (<EmptyElement
