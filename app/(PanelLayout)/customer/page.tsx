@@ -24,11 +24,7 @@ const Orders = async () => {
     }, {
       text: 'Phone', key: 'phone'
     }, {
-      text: 'Orders', key: 'sum'
-    }, {
       text: 'Order Total', key: 'name'
-    }, {
-      text: 'Customer Since', key: 'date'
     }, {
       text: 'Address', key: 'address'
     }]
