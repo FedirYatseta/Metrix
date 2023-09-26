@@ -8,7 +8,14 @@ import { Bag, Bags, Order, Plus } from "@/image/image";
 import HeaderGeneral from "@/components/HeaderGeneral/HeaderGeneral";
 import { row, title } from "@/components/Table/index.config";
 
-export const block = [
+export interface BlockItem {
+  orders: string;
+  pending: string;
+  completed?: string;
+  image: any;
+}
+
+export const block: BlockItem[] = [
   {
     orders: "All Orders",
     pending: "Pending",
