@@ -18,12 +18,12 @@ const TableBody: React.FC<TableBodyProps> = ({
 }) => {
   return (
     <tbody className={`overflow-y-auto `}>
-      {sortedRows.map((item, key) => {
+      {sortedRows.map((item, keys) => {
         return (
-          <tr key={key} className={`${inter.className} h-12 text-black-400 text-sm`} >{
-            title.map(({ key }) => {
+          <tr key={keys} className={`${inter.className} h-12 text-black-400 text-sm`} >{
+            title.map(({ key }, index) => {
               if (key === 'check') {
-                return <td key={key}>
+                return <td key={index}>
                   <Checkbox
                     checked={selectedRows.includes(item.id)}
                     onChange={() => handleCheckboxChange(item.id)}
@@ -31,58 +31,58 @@ const TableBody: React.FC<TableBodyProps> = ({
                 </td>
               }
               if (key === 'email') {
-                return <td key={key}> <span className=" cursor-pointer">{item.email}</span></td>
+                return <td key={index}> <span className=" cursor-pointer">{item.email}</span></td>
               }
               if (key === 'phone') {
-                return <td key={key}> <span className="cursor-pointer">{item.phone}</span></td>
+                return <td key={index}> <span className="cursor-pointer">{item.phone}</span></td>
               }
               if (key === 'sum') {
-                return <td key={key}> <span className=" cursor-pointer">{item.sum}</span></td>
+                return <td key={index}> <span className=" cursor-pointer">{item.sum}</span></td>
               }
               if (key === 'name') {
-                return <td key={key}> <span className="cursor-pointer">{item.name}</span></td>
+                return <td key={index}> <span className="cursor-pointer">{item.name}</span></td>
               }
-              if (key === 'type') { return <td key={key}> <span className=" cursor-pointer">{item.type}</span></td> }
+              if (key === 'type') { return <td key={index}> <span className=" cursor-pointer">{item.type}</span></td> }
               if (key === 'date') {
-                return <td key={key}> <span className=" cursor-pointer">{item.date}</span></td>
+                return <td key={index}> <span className=" cursor-pointer">{item.date}</span></td>
               }
-              if (key === 'address') { return <td key={key}> <span className=" cursor-pointer">{item?.address?.city}</span></td> }
+              if (key === 'address') { return <td key={index}> <span className=" cursor-pointer">{item?.address?.city}</span></td> }
 
               if (key === 'status') {
-                return <td key={key}>
+                return <td key={index}>
                   {item.status === "Completed" ? (
-                    <td>
+                    <div>
                       <span className="text-success bg-[#32936F29] py-1 px-3 rounded-lg text-xs whitespace-nowrap">
                         {" "}
                         {item.status}
                       </span>{" "}
-                    </td>
+                    </div>
                   ) : item.status === "Pending" ? (
-                    <td>
+                    <div>
                       {" "}
                       <span className="text-black bg-secondary-300 py-1 px-3 rounded-lg text-xs whitespace-nowrap">
                         {item.status}{" "}
                       </span>
-                    </td>
+                    </div>
                   ) : item.status === "In-Progress" ? (
-                    <td>
+                    <div>
                       {" "}
                       <span className="text-primary-0 bg-primary-100 py-1 px-3 rounded-lg text-xs whitespace-nowrap">
                         {item.status}
                       </span>
-                    </td>
+                    </div>
                   ) : (
-                    <td>
+                    <div>
                       <span className="text-danger bg-[#fcd8d6] py-1 px-3 rounded-lg text-xs whitespace-nowrap">
                         {" "}
                         {item.status}{" "}
                       </span>
-                    </td>
+                    </div>
                   )}
                 </td>
               }
               if (key === 'action') {
-                return <td key={key}>  <div className="bg-[#5E636614] rounded-lg text-xs px-2 py-1 whitespace-nowrap">
+                return <td key={index}>  <div className="bg-[#5E636614] rounded-lg text-xs px-2 py-1 whitespace-nowrap">
                   <OutlineSelect
                     name={item.action ?? ''}
                     handleChangeFc={updateRowsInTable}
@@ -93,7 +93,7 @@ const TableBody: React.FC<TableBodyProps> = ({
                 </div></td>
               }
               if (key === 'track') {
-                return <td key={key}> <span className="flex items-center justify-center h-full">
+                return <td key={index}> <span className="flex items-center justify-center h-full">
                   {item.track}
                   <CopyToClipboard
                     text={item.track ?? ''}

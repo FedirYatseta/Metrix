@@ -1,44 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlockSum from "@/components/Order/BlockSum";
 import EmptyTable from "@/components/Order/EmptyTable";
 import Table from "@/components/Table/Table";
-import { Bag, Bags, Order, Plus } from "@/image/image";
-
+import { Bag, Plus } from "@/image/image";
 import HeaderGeneral from "@/components/HeaderGeneral/HeaderGeneral";
 import { row, title } from "@/components/Table/index.config";
+import { block } from "@/components/Order/config";
 
-export interface BlockItem {
-  orders: string;
-  pending: string;
-  completed?: string;
-  image: any;
-}
 
-export const block: BlockItem[] = [
-  {
-    orders: "All Orders",
-    pending: "Pending",
-    completed: "Completed",
-    image: Order,
-  },
-  {
-    orders: "Canceled",
-    pending: "Returned",
-    completed: "Damaged",
-    image: Order,
-  },
-  {
-    orders: "Abandoned Cart",
-    pending: "Customers",
-    image: Bags,
-  },
-];
+
 
 const Orders = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
 
-  const data = true;
   return (
     <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
       <HeaderGeneral name={'Add a New Customer'} title="Order Summary" icon={<Plus />} />
@@ -52,7 +32,7 @@ const Orders = () => {
         className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
       >
 
-        {data ? <Table data={row} title={title} /> : <EmptyTable
+        {isClient ? <Table data={row} title={title} /> : <EmptyTable
           name='New Product'
           iconBtn={<Plus />}
           icon={<Bag />} title={'No Orders Yet?'}

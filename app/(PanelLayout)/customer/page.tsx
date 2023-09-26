@@ -2,11 +2,12 @@
 import HeaderGeneral from "@/components/HeaderGeneral/HeaderGeneral";
 import BlockSum from "@/components/Order/BlockSum";
 import EmptyTable from "@/components/Order/EmptyTable";
+import { block } from "@/components/Order/config";
 import Table from "@/components/Table/Table";
 import { Bag, Plus } from "@/image/image";
 import { useGetUsersListQuery } from "@/store/api/api";
 import React from "react";
-import { block } from "../order/page";
+
 
 const Orders = async () => {
 
