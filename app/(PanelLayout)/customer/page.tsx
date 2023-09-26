@@ -9,7 +9,7 @@ import { useGetUsersListQuery } from "@/store/api/api";
 import React from "react";
 
 
-const Orders = async () => {
+const Orders = () => {
 
 
   const result = useGetUsersListQuery();

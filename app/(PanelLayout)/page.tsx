@@ -42,7 +42,7 @@ const data6 = [
   { sum: 50, date: 'Sept 14' },
   { sum: 50, date: 'Sept 15' }]
 
-const Home = async () => {
+const Home = () => {
   const isProduct = false;
 
 

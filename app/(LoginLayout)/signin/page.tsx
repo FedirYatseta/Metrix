@@ -6,7 +6,7 @@ import { Google } from "@/image/image";
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 
-const SignIn = async () => {
+const SignIn = () => {
   const searchParams = useSearchParams();
 
   const redirectUrl = searchParams.get("callbackUrl") || "/";
@@ -16,7 +16,7 @@ const SignIn = async () => {
       <p className="text-black-300 pt-2 text-sm "> Login to your account</p>
       <Login />
       <div className="m-1">
-        <Button 
+        <Button
           handleClick={() => signIn("google", { callbackUrl: redirectUrl })}
           icon={<Google />}
         />
