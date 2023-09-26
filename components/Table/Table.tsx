@@ -121,6 +121,7 @@ const Table = ({ data, title }: any) => {
             handleCheckboxChangeAll={handleCheckboxChangeAll}
           />
           <TableBody
+            title={title}
             sortedRows={sortedRows}
             selectedRows={selectedRows}
             handleCheckboxChange={handleCheckboxChange}

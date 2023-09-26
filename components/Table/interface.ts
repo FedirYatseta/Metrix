@@ -6,7 +6,17 @@ export interface Row {
   track?: string;
   sum?: string;
   action?: string;
-  status: string;
+  status?: string;
+  address?: {
+    city?: string;
+  };
+  phone?: string;
+  email?: string;
+  city?: string;
+  country?: string;
+  zip?: string;
+  company?: string;
+  price?: string;
 }
 
 export interface Column {

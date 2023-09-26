@@ -1,3 +1,4 @@
+import { title } from './../index.config';
 import { Column, Copy, Row } from "../interface";
 
 export interface TableHeaderProps {
@@ -16,4 +17,6 @@ export interface TableBodyProps {
     e: React.ChangeEvent<HTMLSelectElement>,
     id?: number,
   ) => void;
+  title: Column[];
+
 }

@@ -13,24 +13,25 @@ const Orders = async () => {
 
   const result = useGetUsersListQuery();
   const { data, error, isLoading } = result;
+  console.log('data', data)
 
-  const title =
-
-    [
-      { text: " ", key: "check" },
-      {
-        text: 'Customer Name', key: 'name'
-      }, {
-        text: 'Email', key: 'email'
-      }, {
-        text: 'Phone', key: 'phone'
-      }, {
-        text: '250.000', key: 'sum'
-      }, {
-        text: 'Order Total', key: 'name'
-      }, {
-        text: 'Status', key: 'status'
-      }]
+  const title = [
+    { text: " ", key: "check" },
+    {
+      text: 'Customer Name', key: 'name'
+    }, {
+      text: 'Email', key: 'email'
+    }, {
+      text: 'Phone', key: 'phone'
+    }, {
+      text: 'Orders', key: 'sum'
+    }, {
+      text: 'Order Total', key: 'name'
+    }, {
+      text: 'Customer Since', key: 'date'
+    }, {
+      text: 'Address', key: 'address'
+    }]
 
   console.log('title', title)
   return <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">

@@ -1,7 +1,10 @@
-import React from "react";
 
-const Orders = async () => {
-  return <section className="flex">Invert</section>;
+const Inventory = async () => {
+
+  return <section className="flex h-full w-full " >
+    Inventory
+
+  </section>;
 };
 
-export default Orders;
+export default Inventory;
