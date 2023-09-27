@@ -7,7 +7,7 @@ import { IValues } from "./interface";
 import { SignupSchema } from "./config.validate";
 import Profile from '@/image/man.jpg'
 import Image from "next/image";
-import { Delete, Upload } from "@/image/image";
+import { Delete, SaveIcon, Upload } from "@/image/image";
 import { useSession } from "next-auth/react";
 const Account = () => {
   const hiddenFileInput = useRef<HTMLInputElement | null>(null);
@@ -67,8 +67,8 @@ const Account = () => {
         return (
           <Form>
             <div className="flex py-2 justify-between items-center">
-              <h5 className="text-xl font-medium"> Account Settings</h5>
-              <Button name="Update" type='submit' className="w-[148px] py-3 rounded-xl text-white" />
+              <h5 className=" xs:text-xs lg:text-xl font-medium"> Account Settings</h5>
+              <Button icon={<SaveIcon />} name="Update" type='submit' className="xs:w-3/12 lg:w-[148px] xs:py-2 lg:py-3 rounded-xl text-white" />
             </div>
             <div className="grid gap-2 xs:grid-col lg:grid-cols-3">
               <div className="col-span-2">

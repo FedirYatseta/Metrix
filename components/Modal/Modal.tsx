@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import Button from "../Button";
-import { Close, Delete } from "@/image/image";
+import { Cancel, Close, Delete, Plus } from "@/image/image";
 import { inter } from "@/styles/fonts";
 import { Form, Formik, FormikHelpers } from "formik";
 import Input from "../Input/Input";
@@ -23,17 +23,17 @@ const Modal: FC<IModal> = ({ handleOpen, createUser }) => {
 
     return (
         <div className="fixed w-full h-full  top-0 left-0 backdrop-blur-sm z-[100] flex items-center justify-center	">
-            <div className="flex flex-col  max-w-[423px]  p-5  z-[101] bg-white rounded-md w-full ">
+            <div className="flex flex-col xs:max-w-[323px]  lg:max-w-[423px]  p-5  z-[101] bg-white rounded-md w-full ">
 
                 <div className="flex justify-between w-full items-center">
-                    <p className="font-medium text-xl text-black-0 mr-2">Add a New Customer</p>
+                    <p className="font-medium xs:text-lg lg:text-xl text-black-0 mr-2">Add a New Customer</p>
                     <Button
                         handleClick={handleOpen}
                         icon={<Close />}
                         className="p-1.5 rounded-lg bg-secondary-300 hover:bg-secondary-500 active:bg-secondary-700 " />
                 </div>
                 <div className="text-start my-5">
-                    <p className={`${inter.className} text-lg text-black-300 font-medium`}> Customer Information</p>
+                    <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 font-medium`}> Customer Information</p>
                 </div>
                 <Formik
                     initialValues={{
@@ -136,7 +136,7 @@ const Modal: FC<IModal> = ({ handleOpen, createUser }) => {
                                     </div>
                                 </div>
                                 <div className="flex">
-                                    <p className={`${inter.className} text-black-300 mr-2 my-3`}>Add Address</p>
+                                    <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Add Address</p>
                                     <SwitchControl handleClick={handleAddress} />
                                 </div>
                                 {showAddress && (<>
@@ -179,10 +179,9 @@ const Modal: FC<IModal> = ({ handleOpen, createUser }) => {
 
                                     </div>
                                 </>)}
-                                <div className="flex justify-between">
-
-                                    <Button name="Cancel" type="button" className="w-[148px] py-3 rounded-xl mt-5 border border-primary-0 rounded-xl bg-white text-primary-0 hover:bg-white active:border-primary-500 active:bg-white" />
-                                    <Button name="Add " type="submit" className="w-[148px] py-3 rounded-xl mt-5 text-white" />
+                                <div className="grid grid-cols-2 gap-4">
+                                    <Button handleClick={handleOpen} icon={<Cancel color={'#5570F1'} />} name="Cancel" type="button" className=" py-3 rounded-xl mt-5 border border-primary-0 rounded-xl bg-white text-primary-0 hover:bg-white active:border-primary-500 active:bg-white" />
+                                    <Button icon={<Plus />} name="Add " type="submit" className=" py-3 rounded-xl mt-5 text-white" />
                                 </div>
 
                             </Form>

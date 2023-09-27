@@ -12,14 +12,13 @@ const Tabs: FC<ITabsProps> = ({ tabs, defaultTab }) => {
 
   return (
     <div className="p-6 h-full ">
-      <div className={`${inter.className} text-black-200 flex text-md`}>
+      <div className={`${inter.className} text-black-200 flex text-xs justify-between`}>
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`${
-              index === activeTab &&
+            className={`${index === activeTab &&
               " text-black-0 border-b-4  border-primary-0"
-            } px-6 py-2.5 border-b-4  border-white`}
+              } xs:px-2 lg:px-6 py-2.5 border-b-4  border-white`}
             onClick={() => handleTabClick(index)}
           >
             {tab.label}
