@@ -9,11 +9,17 @@ import { COUNTRIES } from "../Select/config";
 
 import Image from "next/image";
 import SwitchControl from "../SwitchControl/SwitchControl";
+import { state } from "../Tabs/Account/state";
+import { useCreateUserMutation } from "@/store/api/api";
 
 interface IModal {
     handleOpen: () => void;
+    createUser: (values: any) => void;
 }
-const Modal: FC<IModal> = ({ handleOpen }) => {
+const Modal: FC<IModal> = ({ handleOpen, createUser }) => {
+    const [showAddress, setShowAddress] = React.useState<boolean>(false);
+
+
 
     return (
         <div className="fixed w-full h-full  top-0 left-0 backdrop-blur-sm z-[100] flex items-center justify-center	">
@@ -35,22 +41,25 @@ const Modal: FC<IModal> = ({ handleOpen }) => {
                         email: "",
                         phone: "",
                         code: "",
+                        country: "",
+                        state: "",
+                        address: "",
+                        city: "",
                     }}
 
                     onSubmit={(values: any, { setSubmitting }: FormikHelpers<any>) => {
 
                         console.log('values', values)
+                        createUser(values)
                     }}
                 >
-                    {({ errors, touched, setFieldValue }) => {
+                    {({ errors, touched, setFieldValue, values, resetForm }) => {
                         const handleCountryChange = (selectedOption: any, name: string) => {
                             if (!selectedOption) return;
                             setFieldValue(name, selectedOption.value);
                         };
                         const options = Object.keys(COUNTRIES).map((countryCode) => {
                             const country = COUNTRIES[countryCode];
-
-
                             return {
                                 label: (
                                     <div style={{ display: "flex", alignItems: "center" }}>
@@ -67,6 +76,25 @@ const Modal: FC<IModal> = ({ handleOpen }) => {
                                 value: country.phone[0],
                             };
                         });
+
+                        const item = state.map((item) => { return { value: item.country, label: item.country } })
+                        const stateItem = state.filter(country => country.country === values.country).map((item) => {
+                            const val = item.states.map((state) => { return { value: state, label: state } })
+                            return [...val]
+                        })
+
+
+                        const handleAddress = () => {
+                            setShowAddress(!showAddress)
+                            if (showAddress === true) {
+
+                                console.log('clear state')
+                                setFieldValue("address", "")
+                                setFieldValue("city", "")
+                                setFieldValue("country", "")
+                                setFieldValue("state", "")
+                            }
+                        }
                         return (
                             <Form className=" flex flex-col max-w-lg w-full m-auto ">
                                 <Input
@@ -90,7 +118,6 @@ const Modal: FC<IModal> = ({ handleOpen }) => {
                                         <CSelect
                                             id={"code"}
                                             name={"code"}
-
                                             onChange={(e) => handleCountryChange(e, "code")}
                                             errors={errors}
                                             touched={touched}
@@ -110,8 +137,48 @@ const Modal: FC<IModal> = ({ handleOpen }) => {
                                 </div>
                                 <div className="flex">
                                     <p className={`${inter.className} text-black-300 mr-2 my-3`}>Add Address</p>
-                                    <SwitchControl />
+                                    <SwitchControl handleClick={handleAddress} />
                                 </div>
+                                {showAddress && (<>
+                                    <Input
+                                        id={"address"}
+                                        name={"address"}
+                                        errors={errors}
+                                        touched={touched}
+                                        placeholder={"Address"}
+
+                                    />
+                                    <Input
+                                        id={"city"}
+                                        name={"city"}
+                                        errors={errors}
+                                        touched={touched}
+                                        placeholder={"City"}
+                                    />
+                                    <div className="grid grid-cols-2 gap-4 items-center">
+                                        <CSelect
+                                            id={"country"}
+                                            name={"country"}
+                                            errors={errors}
+                                            touched={touched}
+                                            options={item}
+                                            onChange={(e) => {
+                                                setFieldValue("country", e.value)
+                                            }}
+                                            defaultValue={item[0]}
+                                        />
+                                        <CSelect
+                                            id={"state"}
+                                            name={"state"}
+                                            errors={errors}
+                                            touched={touched}
+                                            options={stateItem[0]}
+                                            onChange={(e) => setFieldValue("state", e.value)}
+                                            defaultValue={stateItem[0]}
+                                        />
+
+                                    </div>
+                                </>)}
                                 <div className="flex justify-between">
 
                                     <Button name="Cancel" type="button" className="w-[148px] py-3 rounded-xl mt-5 border border-primary-0 rounded-xl bg-white text-primary-0 hover:bg-white active:border-primary-500 active:bg-white" />

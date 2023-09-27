@@ -19,7 +19,7 @@ const Button = ({ name, icon, handleClick, className, type, children }: BtnType)
       {icon}
       {name && (
         <span
-          className={`${inter.className} ${icon && "pl-2"}  text-sm `}
+          className={`${inter.className} ${icon && "pl-2"}  xs:text-xs lg:text-sm xs:hidden lg:block `}
         >
           {" "}
           {name}

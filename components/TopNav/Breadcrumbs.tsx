@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation"; // Use next/navigation
 
 const Breadcrumbs = () => {
   const currentPath = usePathname();
+
+
   const pathSegments = currentPath
     .split("/")
     .filter((segment) => segment !== "");
@@ -26,8 +28,8 @@ const Breadcrumbs = () => {
           key={breadcrumb.path}
           className={` ${inter.className} pl-2 text-sm text-black-200`}
         >
-          {index > 0 && " / "}/
-          <Link href={breadcrumb.path} className="capitalize pl-2 ">
+          {index >= 0 && " / "}
+          <Link href={breadcrumb.path} className="capitalize px-1 ">
             {breadcrumb.label}
           </Link>
         </span>

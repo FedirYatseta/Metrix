@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Select from "react-select";
-import { COUNTRIES } from "./config";
 import { inter } from "@/styles/fonts";
 
 const customStyles = {
@@ -62,7 +61,7 @@ const CSelect: FC<CountrySelectProps> = ({
   return (
     <div className="w-full block">
       {label && (
-        <span className={`${inter.className} flex text-xs text-black-400`}>
+        <span className={`${inter.className} flex text-xs text-black-200`}>
           {label}{" "}
         </span>
       )}
@@ -74,7 +73,7 @@ const CSelect: FC<CountrySelectProps> = ({
         styles={customStyles}
         defaultValue={defaultValue}
         onChange={onChange}
-        className={`rounded-lg block py-3 my-2 min-w-fit  focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
+        className={`rounded-lg block py-3 my-2 min-w-fit text-black-200  focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
           }   `}
       />
     </div>

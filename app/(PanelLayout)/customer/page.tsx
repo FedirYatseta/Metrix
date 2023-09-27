@@ -6,15 +6,15 @@ import EmptyTable from "@/components/Order/EmptyTable";
 import { block } from "@/components/Order/config";
 import Table from "@/components/Table/Table";
 import { Bag, Plus } from "@/image/image";
-import { useGetUsersListQuery } from "@/store/api/api";
+import { useCreateUserMutation, useGetUsersListQuery } from "@/store/api/api";
 import React, { useState } from "react";
 
 
 const Orders = () => {
 
 
-  const result = useGetUsersListQuery();
-  const { data, error, isLoading } = result;
+  const res = useGetUsersListQuery();
+  const { data, error, isLoading } = res;
   console.log('data', data)
 
   const title = [
@@ -36,10 +36,14 @@ const Orders = () => {
   const handleOpen = () => {
     setModal(!modal);
   }
+  const [createUser, result] = useCreateUserMutation()
+  console.log('result', result)
+  if (result.isSuccess) setModal(!modal);
+
 
   console.log('title', title)
   return <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
-    {modal && <Modal handleOpen={handleOpen} />}
+    {modal && <Modal handleOpen={handleOpen} createUser={createUser} />}
     <HeaderGeneral name={'Add a New Customer'} title="Customers Summary" icon={<Plus />} handleOpen={handleOpen} />
     <div className="grid xs:grid-col lg:grid-cols-3 xs:gap-2 lg:gap-4 xs:my-2 lg:my-5 ">
       {block.map((item, key) => {

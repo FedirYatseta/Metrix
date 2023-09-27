@@ -18,5 +18,5 @@ export interface TableBodyProps {
     id?: number,
   ) => void;
   title: Column[];
-
+  path: string;
 }

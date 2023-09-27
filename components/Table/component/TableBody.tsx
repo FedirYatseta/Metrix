@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import OutlineSelect from "@/components/Select/outline";
 import { options } from "../index.config";
 import { inter } from "@/styles/fonts";
+import Link from "next/link";
 
 const TableBody: React.FC<TableBodyProps> = ({
   sortedRows,
@@ -14,8 +15,10 @@ const TableBody: React.FC<TableBodyProps> = ({
   handleCheckboxChange,
   updateRowsInTable,
   setState,
-  title
+  title, path
 }) => {
+
+  console.log('path', path)
   return (
     <tbody className={`overflow-y-auto `}>
       {sortedRows.map((item, keys) => {
@@ -40,7 +43,7 @@ const TableBody: React.FC<TableBodyProps> = ({
                 return <td key={index}> <span className=" cursor-pointer">{item.sum}</span></td>
               }
               if (key === 'name') {
-                return <td key={index}> <span className="cursor-pointer">{item.name}</span></td>
+                return <td key={index}><Link href={`${path}/${item.id} `}><span className="cursor-pointer">{item.name}</span> </Link> </td>
               }
               if (key === 'type') { return <td key={index}> <span className=" cursor-pointer">{item.type}</span></td> }
               if (key === 'date') {

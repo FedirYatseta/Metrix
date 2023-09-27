@@ -2,12 +2,12 @@
 import Input from "@/components/Input/Input";
 import CSelect from "@/components/Select/select";
 import { Location, Message, Profile } from "@/image/image";
-import { Form, Formik, FormikHelpers } from "formik";
+
 import React from "react";
 
 import { state } from './state'
 import { COUNTRIES } from "@/components/Select/config";
-import { IValues } from "./interface";
+
 import Image from "next/image";
 
 

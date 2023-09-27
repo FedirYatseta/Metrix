@@ -9,13 +9,14 @@ import {
   ShareIcon,
   Sort,
 } from "@/image/image";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import OutlineBtn from "../Button/outline";
 import { Row, Copy } from "./interface";
 import { options, } from "./index.config";
 import TableHeader from "./component/TableHeader";
 import TableBody from "./component/TableBody";
 import OutlineSelect from "../Select/outline";
+import { usePathname } from "next/navigation";
 
 
 
@@ -31,7 +32,7 @@ const Table = ({ data, title }: any) => {
   const [sortColumn, setSortColumn] = useState<string | null>(null);
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
-
+  const path = usePathname()
 
   const handleCheckboxChange = (id: any) => {
     const updatedSelectedRows = [...selectedRows];
@@ -121,6 +122,7 @@ const Table = ({ data, title }: any) => {
             handleCheckboxChangeAll={handleCheckboxChangeAll}
           />
           <TableBody
+            path={path}
             title={title}
             sortedRows={sortedRows}
             selectedRows={selectedRows}

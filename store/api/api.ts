@@ -31,6 +31,10 @@ export interface Company {
     bs: string
 }
 
+export interface Post {
+    userId: number
+}
+
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com' }),
     extractRehydrationInfo(action, { reducerPath }) {
@@ -51,6 +55,16 @@ export const api = createApi({
         getUsersList: builder.query<{ results: Root }, void>({
             query: () => `users`,
         }),
+        createUser: builder.mutation<{ results: Root }, Partial<Root>>({
+            query: (body) => ({
+                url: `/users`,
+                method: 'POST',
+                body,
+            }),
+        }),
+        getUserById: builder.query<Root, number>({
+            query: (id) => `users/${id}`,
+        }),
     }),
 })
 
@@ -59,8 +73,10 @@ export const {
     useGetPostsListQuery,
     useGetAlbumsListQuery,
     useGetUsersListQuery,
+    useCreateUserMutation,
+    useGetUserByIdQuery,
     util: { getRunningQueriesThunk },
 } = api;
 
 // export endpoints for use in SSR
-export const { getPostsById, getPostsList, getAlbumsList, getUsersList } = api.endpoints;
+export const { getPostsById, getPostsList, getAlbumsList, getUsersList, createUser, getUserById } = api.endpoints;

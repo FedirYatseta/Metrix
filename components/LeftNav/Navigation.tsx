@@ -22,8 +22,8 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
   return (
     <nav
       className={`w-full flex flex-col ${!rollout
-          ? " justify-start  items-start"
-          : " justify-center  items-center"
+        ? " justify-start  items-start"
+        : " justify-center  items-center"
         }   xs:mt-2 lg:mt-7 `}
     >
       {navLinks.map((link) => {
@@ -37,8 +37,8 @@ const Navigation = ({ navLinks, rollout, showText }: Props) => {
               }
                         ${showText ? "justify-start" : "justify-center"}
                          text-xl  font-serif font-semibold  not-italic my-2
-                          leading-normal tracking-normal flex items-center xs:px-2 lg:px-5 xs:py-1 lg:py-4
-                           rounded-xl  max-w-xs xs:w-10/12 lg:w-full ease-in-out delay-150 duration-200`}
+                          leading-normal tracking-normal flex items-center xs:px-2 lg:px-5 xs:py-2 lg:py-4
+                           rounded-xl  max-w-xs xs:w-9/12 lg:w-full ease-in-out delay-150 duration-200`}
           >
             <div className="w-5 h-5">
               <link.image isActive={isActive} />

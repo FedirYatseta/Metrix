@@ -8,8 +8,6 @@ import OutlineSelect from "@/components/Select/outline";
 import InfoBlock from "@/components/InfoBlock/InfoBlock";
 import ImageIcon from "../../image/ihone.png";
 import OrderBlock from "@/components/OrderBlock/OrderBlock";
-import { useGetAlbumsListQuery, useGetPostsListQuery } from "@/store/api/api";
-import { useRouter } from "next/navigation";
 
 
 
@@ -44,9 +42,6 @@ const data6 = [
 
 const Home = () => {
   const isProduct = false;
-
-
-
 
   return <section className="p-4 h-full">
     <div className="flex flex-col flex-initial h-full overflow-auto">
@@ -163,8 +158,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
-
   </section>;
 };
 

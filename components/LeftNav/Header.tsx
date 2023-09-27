@@ -43,7 +43,7 @@ const Header = () => {
   };
   return (
     <div className="relative">
-      <button onClick={handleOpen} className="xs:flex lg:hidden items-center -mr-10 justify-center absolute top-2 right-3 z-10">
+      <button onClick={handleOpen} className="xs:flex lg:hidden items-center -mr-12 justify-center absolute top-2 right-3 z-10">
         <BurgerIcon />
       </button>
       <header
