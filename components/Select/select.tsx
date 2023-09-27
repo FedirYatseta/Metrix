@@ -15,7 +15,7 @@ const customStyles = {
   }),
   menu: (baseStyles: any) => ({
     ...baseStyles,
-    zIndex: 9999,
+    zIndex: 50,
     background: "#fff",
     padding: "8px",
     fontSize: "12px",
@@ -56,28 +56,27 @@ const CSelect: FC<CountrySelectProps> = ({
   label,
   defaultValue,
 }) => {
- 
+
 
 
   return (
-    <div className="w-full block"> 
-    { label &&  (
-      <span className={`${inter.className} flex text-xs text-black-400`}>
-        {label}{" "}
-      </span>
-    )}
-    <Select
-      id={id}
-      name={name}
-      unstyled
-      options={options}
-      styles={customStyles}
-      defaultValue={defaultValue}
-      onChange={onChange}
-      className={`rounded-lg block py-3 my-2 min-w-fit  focus-within:hover:bg-hov focus:outline-none ${
-        touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
-      }   `}
-    />
+    <div className="w-full block">
+      {label && (
+        <span className={`${inter.className} flex text-xs text-black-400`}>
+          {label}{" "}
+        </span>
+      )}
+      <Select
+        id={id}
+        name={name}
+        unstyled
+        options={options}
+        styles={customStyles}
+        defaultValue={defaultValue}
+        onChange={onChange}
+        className={`rounded-lg block py-3 my-2 min-w-fit  focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
+          }   `}
+      />
     </div>
   );
 };

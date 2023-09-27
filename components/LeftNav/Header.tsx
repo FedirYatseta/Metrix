@@ -46,16 +46,13 @@ const Header = () => {
       <button onClick={handleOpen} className="xs:flex lg:hidden items-center -mr-10 justify-center absolute top-2 right-3 z-10">
         <BurgerIcon />
       </button>
-
       <header
         className={`bg-white h-full ease-in-out delay-150 duration-200   flex  flex-col  justify-between ${rollout
           ? "xs:w-20 lg:w-24 xs:px-1 lg:px-4 "
           : "xs:w-20 lg:w-96  xs:px-2 lg:px-8 xs:hidden lg:flex"
           }`}
       >
-
         <div>
-
           <div
             className={`flex items-center ${rollout && "justify-center"
               } cursor-pointer  py-3`}

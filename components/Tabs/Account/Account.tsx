@@ -59,7 +59,7 @@ const Account = () => {
       validationSchema={SignupSchema}
       onSubmit={(values: IValues, { setSubmitting }: FormikHelpers<IValues>) => {
         handleSubmit(values);
-        alert('Вадім дурачок)');
+
 
       }}
     >
@@ -68,7 +68,7 @@ const Account = () => {
           <Form>
             <div className="flex py-2 justify-between items-center">
               <h5 className="text-xl font-medium"> Account Settings</h5>
-              <Button name="Update" type='submit' className="w-[148px] py-3" />
+              <Button name="Update" type='submit' className="w-[148px] py-3 rounded-xl text-white" />
             </div>
             <div className="grid gap-2 xs:grid-col lg:grid-cols-3">
               <div className="col-span-2">
@@ -89,11 +89,11 @@ const Account = () => {
                             name="avatar"
                             accept="image/png, image/jpeg"
                             className="hidden " />
-                          <Button type="button" handleClick={handleClick} className="bg-secondary-300 text-white rounded-xl  hover:bg-secondary-200 active:bg-secondary-600" icon={<Upload />} />
+                          <Button type="button" handleClick={handleClick} className="bg-secondary-300 text-white rounded-xl p-1.5 hover:bg-secondary-200 active:bg-secondary-600 text-white" icon={<Upload />} />
                         </label>
                         <label className="px-1"  >
 
-                          <Button type="button" handleClick={() => setImage(null)} className="bg-secondary-300 text-white rounded-xl  hover:bg-secondary-200 active:bg-secondary-600" icon={<Delete />} />
+                          <Button type="button" handleClick={() => setImage(null)} className="bg-secondary-300 text-white rounded-xl p-1.5  hover:bg-secondary-200 active:bg-secondary-600 text-white" icon={<Delete />} />
                         </label>
 
                       </div>

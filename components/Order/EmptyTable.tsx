@@ -23,7 +23,7 @@ const EmptyElement: FC<IEmptyElement> = ({ icon, title, describe, name, iconBtn 
       >
         {describe}
       </h6>
-      <Button name={name} icon={iconBtn} />
+      <Button name={name} icon={iconBtn} className=" rounded-xl px-3 py-2 text-white" />
     </div>
   );
 };

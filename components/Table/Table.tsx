@@ -91,7 +91,7 @@ const Table = ({ data, title }: any) => {
       <div className="pb-4 text-start flex justify-between xs:flex-col lg:flex-row items-center ">
         <h6 className={`${inter.className} font-medium`}>Customer Orders </h6>
         <div className="grid xs:grid-cols lg:grid-cols-6  gap-2 text-xs  xs:w-full lg:w-8/12">
-          <label className="relative block border-0 h-full col-span-2">
+          <label className="relative block border-0 h-full col-span-2 z-auto">
             <span className="absolute inset-0 left-2 flex items-center ">
               <SearchInput />
             </span>

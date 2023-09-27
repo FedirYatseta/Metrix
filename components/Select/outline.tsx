@@ -66,7 +66,7 @@ const OutlineSelect = ({
         }),
         menu: (baseStyles) => ({
           ...baseStyles,
-          zIndex: 9999,
+          zIndex: 50,
           background: "#fff",
           padding: "8px",
           fontSize: "12px",

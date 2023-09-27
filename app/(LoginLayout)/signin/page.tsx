@@ -16,7 +16,7 @@ const SignIn = () => {
       <p className="text-black-300 pt-2 text-sm "> Login to your account</p>
       <Login />
       <div className="m-1">
-        <Button
+        <Button className="bg-white text-black-300 rounded-xl px-1 py-1 hover:bg-white active:bg-black-100" name="Sign in with Google"
           handleClick={() => signIn("google", { callbackUrl: redirectUrl })}
           icon={<Google />}
         />

@@ -1105,7 +1105,7 @@ export const Google = () => {
       viewBox="0 0 30 30"
       width="30px"
       height="30px"
-      fill="#fff"
+      fill="#cdcdcd"
     >
       <path d="M 15.003906 3 C 8.3749062 3 3 8.373 3 15 C 3 21.627 8.3749062 27 15.003906 27 C 25.013906 27 27.269078 17.707 26.330078 13 L 25 13 L 22.732422 13 L 15 13 L 15 17 L 22.738281 17 C 21.848702 20.448251 18.725955 23 15 23 C 10.582 23 7 19.418 7 15 C 7 10.582 10.582 7 15 7 C 17.009 7 18.839141 7.74575 20.244141 8.96875 L 23.085938 6.1289062 C 20.951937 4.1849063 18.116906 3 15.003906 3 z" />
     </svg>
@@ -1131,7 +1131,7 @@ export const Upload = () => {
 
 export const Delete = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 17 18" fill="none">
       <path d="M14.1042 6.88965C14.1042 6.88965 13.6517 12.5021 13.3892 14.8663C13.2642 15.9955 12.5667 16.6571 11.4242 16.678C9.24999 16.7171 7.07332 16.7196 4.89999 16.6738C3.80082 16.6513 3.11499 15.9813 2.99249 14.8721C2.72832 12.4871 2.27832 6.88965 2.27832 6.88965" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M15.2567 4.19987H1.125" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M12.5335 4.19949C11.8793 4.19949 11.316 3.73699 11.1877 3.09616L10.9852 2.08283C10.8602 1.61533 10.4368 1.29199 9.95432 1.29199H6.42682C5.94432 1.29199 5.52099 1.61533 5.39599 2.08283L5.19349 3.09616C5.06516 3.73699 4.50182 4.19949 3.84766 4.19949" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -1268,6 +1268,15 @@ export const BurgerIcon = () => {
       <path d="M21 14H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M21 10H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M21 6H3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}
+
+export const Close = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M18 6L6 18" stroke="#1C1D22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M6 6L18 18" stroke="#1C1D22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   )
 }
