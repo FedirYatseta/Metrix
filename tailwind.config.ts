@@ -84,6 +84,7 @@ const config: Config = {
       white: "#FFF",
       pressed: "#5B6EC6",
       hover: "#304bc7",
+      lightGrin: '#32936F29'
     },
     backgroundImage: {
       "arrow-pattern": "url('/image/fi_chevron-down.svg')",
