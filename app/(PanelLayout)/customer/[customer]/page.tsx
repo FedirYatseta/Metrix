@@ -6,11 +6,14 @@ import InfoUser from "@/components/InfoUser/Infouser";
 import TotalOrder from "@/components/InfoUser/TotalOrder";
 
 import BlockSum from "@/components/Order/BlockSum";
+import EmptyTable from "@/components/Order/EmptyTable";
 import { block } from "@/components/Order/config";
-import { ManIcon, Plus } from "@/image/image";
+import Table from "@/components/Table/Table";
+import { row, title } from "@/components/Table/index.config";
+import { Bag, ManIcon, Plus } from "@/image/image";
 import { useGetUserByIdQuery } from "@/store/api/api";
 import { inter } from "@/styles/fonts";
-import React from "react"
+import React, { useState } from "react"
 
 const Customer = ({ params }: { params: { customer: string } }) => {
     const customerId = parseInt(params.customer); // Перетворення рядка в число
@@ -18,7 +21,7 @@ const Customer = ({ params }: { params: { customer: string } }) => {
     const { data: user = {}, isFetching, isLoading } = useGetUserByIdQuery(customerId);
 
     console.log('data', user)
-
+    const [isClient, setIsClient] = useState(true)
 
     if (isLoading) {
         return <div>Loading...</div>
@@ -36,6 +39,15 @@ const Customer = ({ params }: { params: { customer: string } }) => {
                     return <BlockSum item={item} key={key} />;
                 })}
 
+            </div>
+            <div
+                className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
+            >
+                {isClient ? <Table data={row} title={title} /> : <EmptyTable
+                    name='New Product'
+                    iconBtn={<Plus />}
+                    icon={<Bag />} title={'No Orders Yet?'}
+                    describe=" Add products to your store and start selling to see orders here." />}
             </div>
 
         </section>
