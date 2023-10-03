@@ -1327,3 +1327,24 @@ export const PieChart = () => {
   )
 
 }
+
+
+export const InventoryIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8492 12.11C16.8492 15.0917 15.0917 16.8492 12.11 16.8492H5.625C2.63583 16.8492 0.875 15.0917 0.875 12.11V5.61C0.875 2.6325 1.97 0.875 4.9525 0.875H6.61917C7.2175 0.875833 7.78083 1.15667 8.13917 1.63583L8.9 2.6475C9.26 3.12583 9.82333 3.4075 10.4217 3.40833H12.78C15.7692 3.40833 16.8725 4.93 16.8725 7.9725L16.8492 12.11Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.23438 11.0524H12.5135" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+
+}
+
+export const HumanIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99268 11.6724C10.0668 11.6724 12.6943 12.1382 12.6943 13.999C12.6943 15.8599 10.0843 16.339 6.99268 16.339C3.91768 16.339 1.29102 15.8774 1.29102 14.0157C1.29102 12.154 3.90018 11.6724 6.99268 11.6724Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99289 9.01634C4.97456 9.01634 3.33789 7.38051 3.33789 5.36217C3.33789 3.34384 4.97456 1.70801 6.99289 1.70801C9.01039 1.70801 10.6471 3.34384 10.6471 5.36217C10.6546 7.37301 9.02956 9.00884 7.01872 9.01634H6.99289Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.7354 8.0679C14.0695 7.8804 15.097 6.7354 15.0995 5.34956C15.0995 3.98373 14.1037 2.8504 12.7979 2.63623" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.4961 11.2769C15.7886 11.4694 16.6911 11.9227 16.6911 12.856C16.6911 13.4985 16.2661 13.9152 15.5794 14.176" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>)
+}

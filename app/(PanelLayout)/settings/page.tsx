@@ -1,3 +1,4 @@
+import Section from "@/components/Section/Section";
 import Account from "@/components/Tabs/Account/Account";
 import Tabs from "@/components/Tabs/Tabs";
 import React from "react";
@@ -18,11 +19,11 @@ const Orders = async () => {
     },
   ];
   return (
-    <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
+    <Section>
       <div className="bg-white rounded-md w-full h-auto">
         <Tabs tabs={tabsData} defaultTab={0} />
       </div>
-    </section>
+    </Section>
   );
 };
 

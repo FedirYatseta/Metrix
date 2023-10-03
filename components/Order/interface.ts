@@ -5,4 +5,6 @@ export interface BlockItem {
     pending: string;
     completed?: string;
     image: any;
+    sumCount: number;
+    select: boolean;
 }

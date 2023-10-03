@@ -12,7 +12,7 @@ const Tabs: FC<ITabsProps> = ({ tabs, defaultTab }) => {
 
   return (
     <div className="p-6 h-full ">
-      <div className={`${inter.className} text-black-200 flex text-xs justify-between`}>
+      <div className={`${inter.className} text-black-200 flex text-xs xs:justify-between lg:justify-start`}>
         {tabs.map((tab, index) => (
           <button
             key={index}

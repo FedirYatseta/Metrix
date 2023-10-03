@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import logoUsers from '@/image/Doe.png'
 import ChatBlock from "@/components/ChatBlock/ChatBlock";
 import ChatDashboard from "@/components/ChatDashboard/ChatDashboard";
+import Section from "@/components/Section/Section";
 
 const data = [
   {
@@ -137,8 +138,8 @@ const Orders = () => {
   console.log('User', selectedUser)
 
 
-  return (<section className="flex flex-col flex-auto  overflow-y-auto h-full">
-    <div className="rounded-md w-full flex flex-col flex-auto p-4">
+  return (<Section>
+    <div className="rounded-md w-full flex flex-col flex-auto">
       <HeaderGeneral name={'New Message'} title={'Conversations with Customers'} />
       <div className=" h-full flex flex-col flex-auto  ">
         <div className="grid xs:grid-col lg:grid-cols-3 gap-4 mt-4 h-full ">
@@ -184,7 +185,7 @@ const Orders = () => {
         </div>
       </div>
     </div>
-  </section>)
+  </Section>)
 };
 
 export default Orders;

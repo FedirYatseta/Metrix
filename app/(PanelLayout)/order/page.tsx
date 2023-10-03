@@ -7,6 +7,7 @@ import { Bag, Plus } from "@/image/image";
 import HeaderGeneral from "@/components/HeaderGeneral/HeaderGeneral";
 import { row, title } from "@/components/Table/index.config";
 import { block } from "@/components/Order/config";
+import Section from "@/components/Section/Section";
 
 
 
@@ -20,11 +21,11 @@ const Orders = () => {
 
 
   return (
-    <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
+    <Section>
       <HeaderGeneral name={'Add a New Customer'} title="Order Summary" icon={<Plus />} />
       <div className="grid xs:grid-col lg:grid-cols-3 xs:gap-2 lg:gap-4 xs:my-2 lg:my-5 ">
         {block.map((item, key) => {
-          return <BlockSum item={item} key={key} />;
+          return <BlockSum item={item} key={key} className={'bg-white'} />;
         })}
       </div>
 
@@ -38,7 +39,7 @@ const Orders = () => {
           icon={<Bag />} title={'No Orders Yet?'}
           describe=" Add products to your store and start selling to see orders here." />}
       </div>
-    </section>
+    </Section>
   );
 };
 

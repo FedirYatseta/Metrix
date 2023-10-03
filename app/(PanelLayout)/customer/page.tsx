@@ -4,6 +4,7 @@ import Modal from "@/components/Modal/Modal";
 import BlockSum from "@/components/Order/BlockSum";
 import EmptyTable from "@/components/Order/EmptyTable";
 import { block } from "@/components/Order/config";
+import Section from "@/components/Section/Section";
 import Table from "@/components/Table/Table";
 import { Bag, Plus } from "@/image/image";
 import { useCreateUserMutation, useGetUsersListQuery } from "@/store/api/api";
@@ -42,12 +43,12 @@ const Orders = () => {
 
 
   console.log('title', title)
-  return <section className="xs:p-2 lg:p-5 flex flex-col flex-auto  overflow-y-auto h-full">
+  return <Section>
     {modal && <Modal handleOpen={handleOpen} createUser={createUser} />}
     <HeaderGeneral name={'Add a New Customer'} title="Customers Summary" icon={<Plus />} handleOpen={handleOpen} />
     <div className="grid xs:grid-col lg:grid-cols-3 xs:gap-2 lg:gap-4 xs:my-2 lg:my-5 ">
       {block.map((item, key) => {
-        return <BlockSum item={item} key={key} />;
+        return <BlockSum item={item} key={key} className={'bg-white'} />;
       })}
     </div>
     <div
@@ -59,7 +60,7 @@ const Orders = () => {
         icon={<Bag />} title={'No Orders Yet?'}
         describe=" Add products to your store and start selling to see orders here." />}
     </div>
-  </section>;
+  </Section>
 };
 
 export default Orders;
