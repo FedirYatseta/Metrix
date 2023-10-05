@@ -50,7 +50,7 @@ export default function IndexPage() {
 
     return (
         <div className="flex w-full">
-            <NextQuill className={'bg-black-950 w-full rounded-md'}
+            <NextQuill className={' w-full rounded-md h-full max-h-[300px]'}
 
                 modules={modules}
                 formats={formats}
