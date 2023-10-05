@@ -3,6 +3,7 @@ import Select from "react-select";
 import { inter } from "@/styles/fonts";
 
 const customStyles = {
+
   control: (baseStyles: any) => ({
     ...baseStyles,
     minHeight: 0,
@@ -43,6 +44,7 @@ interface CountrySelectProps {
   errors: { [key: string]: string };
   touched: { [key: string]: boolean };
   onChange?: (selectedOption: any) => void;
+  placeholder?: string;
 }
 
 const CSelect: FC<CountrySelectProps> = ({
@@ -54,6 +56,7 @@ const CSelect: FC<CountrySelectProps> = ({
   options,
   label,
   defaultValue,
+  placeholder
 }) => {
 
 
@@ -62,10 +65,10 @@ const CSelect: FC<CountrySelectProps> = ({
     <div className="w-full block">
       {label && (
         <span className={`${inter.className} flex text-xs text-black-200`}>
-          {label}{" "}
+          {label}
         </span>
       )}
-      <Select
+      <Select placeholder={<div className="text-start">{placeholder}</div>}
         id={id}
         name={name}
         unstyled

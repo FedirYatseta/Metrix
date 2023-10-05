@@ -49,20 +49,36 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
               </InputMask>
             )}
           </Field>
-        ) : (
-          <Field
-            id={id}
-            type={type}
-            name={name}
-            placeholder={placeholder}
-            className={`rounded-lg block
+        ) : type === 'textarea' ?
+          (
+            <Field
+              as={type} rows={4}
+              id={id}
+              name={name}
+              placeholder={placeholder}
+              className={`rounded-lg block
+                      py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov
+                      focus:outline-none ${touched[name] && errors[name]
+                  ? "bg-[#FCF3F2B2]"
+                  : "bg-black-950"
+                } ${className}   `}
+            />
+          )
+          :
+          (
+            <Field
+              id={id}
+              type={type}
+              name={name}
+              placeholder={placeholder}
+              className={`rounded-lg block
                         py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov
                         focus:outline-none ${touched[name] && errors[name]
-                ? "bg-[#FCF3F2B2]"
-                : "bg-black-950"
-              } ${className}   `}
-          />
-        )}
+                  ? "bg-[#FCF3F2B2]"
+                  : "bg-black-950"
+                } ${className}   `}
+            />
+          )}
 
         {touched[name] && errors[name] && (
           <p className="text-danger align-start absolute text-xs py-1">
