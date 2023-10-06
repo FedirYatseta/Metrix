@@ -32,7 +32,7 @@ interface IForm {
     date: Date | null;
     time: string;
     desc: string;
-    image: any;
+    image: object | null;
 }
 const FormInventory: FC<IModal> = ({ createUser }) => {
     const [showAddress, setShowAddress] = React.useState<boolean>(false);
@@ -213,15 +213,15 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                 <p className=" text-black-600 text-lg text-start">
                                     Additional Images
                                 </p>
-                                <div className="grid grid-cols-2 gap-2">
+                                <div className="grid grid-cols-2 gap-4">
                                     {values.image === null ? (<>
                                         <div className="bg-main border border-grey-1 rounded-md px-4 py-10 flex justify-center">
                                             <PreviewIcon />
                                         </div>
                                     </>) :
-                                        (values.image.map((item: any) => (
+                                        ((values.image as string[]).map((item: string) => (
                                             <img src={item}
-                                                className="w-full h-auto object-cover max-w-[172px] max-h-[167px]" />
+                                                className="w-full h-auto object-cover  max-h-[167px]" />
                                         )))}
                                     <div className=" border border-grey-1 border-dashed rounded-md px-4 py-10 flex justify-center">
 
