@@ -219,8 +219,8 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                             <PreviewIcon />
                                         </div>
                                     </>) :
-                                        ((values.image as string[]).map((item: string) => (
-                                            <img src={item}
+                                        ((values.image as string[]).map((item: string, key: any) => (
+                                            <img src={item} key={key}
                                                 className="w-full h-auto object-cover  max-h-[167px]" />
                                         )))}
                                     <div className=" border border-grey-1 border-dashed rounded-md px-4 py-10 flex justify-center">
