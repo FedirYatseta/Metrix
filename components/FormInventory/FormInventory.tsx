@@ -1,30 +1,37 @@
-import React, { FC, useState } from "react"
-import Button from "../Button";
-import { Cancel, Close, Delete, Plus } from "@/image/image";
+'use client'
+import React, { FC, } from "react"
 import { inter } from "@/styles/fonts";
 import { Form, Formik, FormikHelpers } from "formik";
 import Input from "../Input/Input";
 import CSelect from "../Select/select";
-import { COUNTRIES } from "../Select/config";
-
-import Image from "next/image";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import TimePicker from 'react-time-picker';
 import SwitchControl from "../SwitchControl/SwitchControl";
 import { state } from "../Tabs/Account/state";
-import { useCreateUserMutation } from "@/store/api/api";
 import QuillEditor from "../QuillEditor/QuillEditor";
-
+import 'react-time-picker/dist/TimePicker.css';
+import 'react-clock/dist/Clock.css';
 interface IModal {
 
     createUser?: (values: any) => void;
 }
+
+interface IForm {
+    name: string;
+    category: string;
+    phone: string;
+    code: string;
+    country: string;
+    state: string;
+    address: string;
+    city: string;
+    date: Date | null;
+    time: string;
+}
 const FormInventory: FC<IModal> = ({ createUser }) => {
     const [showAddress, setShowAddress] = React.useState<boolean>(false);
-    const [v, setV] = useState(1);
-    const [value, setValue] = useState("");
-
-    const vf = { value: 1 };
-
-
+    const date = new Date()
     return (
 
 
@@ -38,9 +45,11 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                 state: "",
                 address: "",
                 city: "",
+                date: null,
+                time: "",
             }}
 
-            onSubmit={(values: any, { setSubmitting }: FormikHelpers<any>) => {
+            onSubmit={(values: IForm, { setSubmitting }: FormikHelpers<any>) => {
 
                 console.log('values', values)
 
@@ -90,7 +99,6 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                         placeholder="Select Product Category"
                                         id={"category"}
                                         name={"category"}
-
                                         errors={errors}
                                         touched={touched}
                                         options={options}
@@ -197,6 +205,25 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                         placeholder={"Short Description"}
                                     />
                                     <QuillEditor />
+                                    <div className="flex justify-between">
+                                        <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Return Policy</p>
+                                        <div className="flex items-center">
+                                            <p className={`${inter.className} text-black-300 text-sm px-2`}>Add Discount</p>
+                                            <SwitchControl handleClick={handleAddress} />
+                                        </div>
+
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <DatePicker
+                                            className="w-full bg-black-950 rounded-md min-h-[48px]"
+                                            onChange={(e) => setFieldValue("date", e)}
+                                            selected={values.date}
+                                        />
+                                        <TimePicker
+                                            className="w-full bg-black-950 rounded-md min-h-[48px] border-0"
+                                            value={values.time}
+                                            onChange={(e) => setFieldValue('time', e)} />
+                                    </div>
                                 </div>
                             </div>
 

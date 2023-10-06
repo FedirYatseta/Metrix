@@ -49,8 +49,8 @@ export default function IndexPage() {
     // const [value, setValue] = useState("");
 
     return (
-        <div className="flex w-full">
-            <NextQuill className={' w-full rounded-md h-full max-h-[300px]'}
+        <div className="flex w-full min-h-[150px]">
+            <NextQuill className={' w-full rounded-md h-full bg-black-950 '}
 
                 modules={modules}
                 formats={formats}
