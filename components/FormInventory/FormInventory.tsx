@@ -84,9 +84,9 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                     }
                 }
                 return (
-                    <Form className="grid grid-cols-3 gap-4 py-2 h-full">
-                        <div className="col-span-2 bg-white rounded-md p-6">
-                            <div className="grid grid-cols-2 gap-2">
+                    <Form className="grid xs:grid-col lg:grid-cols-3 gap-4 py-2 h-full">
+                        <div className="lg:col-span-2 bg-white rounded-md p-6">
+                            <div className="grid xs:grid-col lg:grid-cols-2 gap-2">
                                 <div className="flex flex-col gap-2">
                                     <Input
                                         id={"name"}
@@ -215,7 +215,7 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                     </div>
                                     <div className="grid grid-cols-2 gap-2">
                                         <DatePicker
-                                            className="w-full bg-black-950 rounded-md min-h-[48px]"
+                                            className="w-full bg-black-950 rounded-md min-h-[48px] px-3"
                                             onChange={(e) => setFieldValue("date", e)}
                                             selected={values.date}
                                         />
