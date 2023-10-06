@@ -45,8 +45,12 @@ const NextQuill = (props: any) => {
     return quill;
 };
 
-export default function IndexPage() {
-    // const [value, setValue] = useState("");
+const TextEditor = ({ desc, setFieldValue }: any) => {
+    const [value, setValue] = useState<string>(desc);
+    const handleChange = (value: any) => {
+        setValue(value);
+        setFieldValue('desc', value)
+    }
 
     return (
         <div className="flex w-full min-h-[150px]">
@@ -54,8 +58,10 @@ export default function IndexPage() {
 
                 modules={modules}
                 formats={formats}
-                onChange={(value: any) => console.log(value)}
+                onChange={handleChange}
             />
         </div>
     );
 }
+
+export default TextEditor;

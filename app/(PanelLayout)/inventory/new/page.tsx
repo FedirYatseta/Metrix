@@ -9,7 +9,6 @@ import React from "react"
 const New = () => {
     return (
         <Section>
-            <HeaderGeneral name={'Save as Draft'} title="New Inventory Item" icon={<Plus />} />
 
             <FormInventory />
 
