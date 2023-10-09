@@ -35,7 +35,7 @@ interface IForm {
     image: object | null;
 }
 const FormInventory: FC<IModal> = ({ createUser }) => {
-    const [showAddress, setShowAddress] = React.useState<boolean>(false);
+    const [showAddress, setShowAddress] = React.useState<{ discount: boolean, expiry: boolean, return: boolean }>({ discount: false, expiry: false, return: false });
 
     return (
 
@@ -73,16 +73,17 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
 
 
 
-                const handleAddress = () => {
-                    setShowAddress(!showAddress)
-                    if (showAddress === true) {
-
-                        console.log('clear state')
-                        setFieldValue("address", "")
-                        setFieldValue("city", "")
-                        setFieldValue("country", "")
-                        setFieldValue("state", "")
+                const handleAddress = (value: string) => {
+                    if (value === 'discount') {
+                        setShowAddress({ ...showAddress, discount: !showAddress.discount })
+                    } else if (value === 'expiry') {
+                        setShowAddress({ ...showAddress, expiry: !showAddress.expiry })
                     }
+                    else if (value === 'policy') {
+                        setShowAddress({ ...showAddress, return: !showAddress.return })
+                    }
+
+
                 }
                 return (
                     <Form >
@@ -146,18 +147,18 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                             <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Discount</p>
                                             <div className="flex items-center">
                                                 <p className={`${inter.className} text-black-300 text-sm px-2`}>Add Discount</p>
-                                                <SwitchControl handleClick={handleAddress} />
+                                                <SwitchControl handleClick={() => handleAddress('discount')} id={'Discount'} />
                                             </div>
                                         </div>
-                                        <div className="flex justify-between">
-                                            <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Expiry Date</p>
-                                            <div className="flex items-center">
-                                                <p className={`${inter.className} text-black-300 text-sm px-2`}>Add Expiry Date</p>
-                                                <SwitchControl handleClick={handleAddress} />
-                                            </div>
-
-                                        </div>
-                                        {showAddress && (<>
+                                        {showAddress.discount && (<div className="grid grid-cols-2 gap-2">
+                                            <CSelect
+                                                placeholder="Order Type"
+                                                id={"type"}
+                                                name={"type"}
+                                                errors={errors}
+                                                touched={touched}
+                                                options={options}
+                                            />
                                             <Input
                                                 id={"address"}
                                                 name={"address"}
@@ -166,17 +167,19 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                                 placeholder={"Address"}
 
                                             />
-                                            <Input
-                                                id={"city"}
-                                                name={"city"}
-                                                errors={errors}
-                                                touched={touched}
-                                                placeholder={"City"}
-                                            />
-                                            <div className="grid grid-cols-2 gap-4 items-center">
-
-
+                                        </div>)}
+                                        <div className="flex justify-between">
+                                            <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Expiry Date</p>
+                                            <div className="flex items-center">
+                                                <p className={`${inter.className} text-black-300 text-sm px-2`}>Add Expiry Date</p>
+                                                <SwitchControl handleClick={() => handleAddress('expiry')} id={'Date'} />
                                             </div>
+
+                                        </div>
+                                        {showAddress.expiry && (<>
+                                            <NoSSRDatePiker values={values} setFieldValue={setFieldValue} type='expiry' />
+
+
                                         </>)}
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -193,12 +196,24 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                             <p className={`${inter.className} xs:text-xs lg:text-lg text-black-300 mr-2 my-3`}>Return Policy</p>
                                             <div className="flex items-center">
                                                 <p className={`${inter.className} text-black-300 text-sm px-2`}>Add Discount</p>
-                                                <SwitchControl handleClick={handleAddress} />
+                                                <SwitchControl handleClick={() => handleAddress('policy')} />
                                             </div>
 
                                         </div>
+                                        {showAddress.return && (
+
+                                            <Input
+                                                id={"policy"}
+                                                name={"policy"}
+                                                type="number"
+                                                errors={errors}
+                                                touched={touched}
+                                                placeholder={"policy"}
+
+                                            />
+                                        )}
                                         <div className="grid grid-cols-2 gap-2">
-                                            <NoSSRDatePiker values={values} setFieldValue={setFieldValue} />
+                                            <NoSSRDatePiker values={values} setFieldValue={setFieldValue} type='date' />
                                             <NoSSRTimePiker values={values} setFieldValue={setFieldValue} />
                                         </div>
                                     </div>
@@ -206,10 +221,10 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
 
                             </div>
                             <div className="bg-white rounded-md p-6 ">
-                                <div className="my-2 rounded-md border-1 border-grey-1 bg-main px-4 py-12 flex flex-col items-center">
-                                    <AddImageProd setFieldValue={setFieldValue} img={values.image} />
 
-                                </div>
+                                <AddImageProd setFieldValue={setFieldValue} img={values.image} />
+
+
                                 <p className=" text-black-600 text-lg text-start">
                                     Additional Images
                                 </p>
