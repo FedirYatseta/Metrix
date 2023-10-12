@@ -19,7 +19,7 @@ const Breadcrumbs = () => {
   });
 
   return (
-    <div className="flex items-center px-5 py-1 border-t-2 border-stroke">
+    <div className="flex items-center px-5 py-1 border-t-2 border-stroke dark:border-black-800">
       <Link href="/">
         <Home />
       </Link>

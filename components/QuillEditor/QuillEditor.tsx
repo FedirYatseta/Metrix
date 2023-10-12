@@ -11,7 +11,8 @@ const modules = {
         [{ align: '' }, { align: 'right' }, { align: 'justify' }]
 
     ]
-};
+}
+
 
 const formats = [
     "header",
