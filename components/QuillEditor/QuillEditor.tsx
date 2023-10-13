@@ -11,7 +11,8 @@ const modules = {
         [{ align: '' }, { align: 'right' }, { align: 'justify' }]
 
     ]
-};
+}
+
 
 const formats = [
     "header",
@@ -54,7 +55,7 @@ const TextEditor = ({ desc, setFieldValue }: any) => {
 
     return (
         <div className="flex w-full min-h-[150px]">
-            <NextQuill className={' w-full rounded-md h-full bg-black-950 '}
+            <NextQuill className={' w-full rounded-md h-full bg-black-950 dark:bg-black-800 dark:text-black-400 border-0 '}
 
                 modules={modules}
                 formats={formats}

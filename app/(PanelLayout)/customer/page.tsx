@@ -52,7 +52,7 @@ const Orders = () => {
       })}
     </div>
     <div
-      className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
+      className="bg-white dark:bg-black-600 rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
     >
       {data ? <Table data={data} title={title} /> : <EmptyTable
         name='New Product'

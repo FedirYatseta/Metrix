@@ -14,7 +14,7 @@ interface IEmptyElement {
 const EmptyElement: FC<IEmptyElement> = ({ icon, title, describe, name, iconBtn }) => {
   return (
     <div className="h-full flex flex-col items-center justify-center">
-      <div className="bg-main rounded-full border-2 border-grey-1 flex items-center justify-center p-9">
+      <div className="bg-main dark:bg-black-200 rounded-full border-2 border-grey-1 flex items-center justify-center p-9">
         {icon}
       </div>
       <h4 className="text-xl font-medium pt-9 ">{title}</h4>

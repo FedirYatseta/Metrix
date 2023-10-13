@@ -89,7 +89,7 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                     <Form >
                         <HeaderGeneral name={'Save as Draft'} title="New Inventory Item" icon={<Plus />} />
                         <div className="grid xs:grid-col lg:grid-cols-3 gap-4 py-2 h-full">
-                            <div className="lg:col-span-2 bg-white rounded-md p-6">
+                            <div className="lg:col-span-2 bg-white dark:bg-black-600 rounded-md p-6">
                                 <div className="grid xs:grid-col lg:grid-cols-2 gap-2">
                                     <div className="flex flex-col gap-2">
                                         <Input
@@ -220,7 +220,7 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                 </div>
 
                             </div>
-                            <div className="bg-white rounded-md p-6 ">
+                            <div className="bg-white dark:bg-black-600  rounded-md p-6 ">
 
                                 <AddImageProd setFieldValue={setFieldValue} img={values.image} />
 
@@ -230,7 +230,7 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                 </p>
                                 <div className="grid grid-cols-2 gap-4">
                                     {values.image === null ? (<>
-                                        <div className="bg-main border border-grey-1 rounded-md px-4 py-10 flex justify-center">
+                                        <div className="bg-main dark:bg-black-800 border border-grey-1 dark:border-black-500 rounded-md px-4 py-10 flex justify-center">
                                             <PreviewIcon />
                                         </div>
                                     </>) :
@@ -238,7 +238,7 @@ const FormInventory: FC<IModal> = ({ createUser }) => {
                                             <img src={item} key={key}
                                                 className="w-full h-auto object-cover  max-h-[167px]" />
                                         )))}
-                                    <div className=" border border-grey-1 border-dashed rounded-md px-4 py-10 flex justify-center">
+                                    <div className="bg-main dark:bg-black-800 border border-grey-1 dark:border-black-500  border-dashed rounded-md px-4 py-10 flex justify-center">
 
                                     </div>
                                 </div>

@@ -25,12 +25,12 @@ const Orders = () => {
       <HeaderGeneral name={'Add a New Customer'} title="Order Summary" icon={<Plus />} />
       <div className="grid xs:grid-col lg:grid-cols-3 xs:gap-2 lg:gap-4 xs:my-2 lg:my-5 ">
         {block.map((item, key) => {
-          return <BlockSum item={item} key={key} className={'bg-white'} />;
+          return <BlockSum item={item} key={key} className={'bg-white dark:bg-black-600'} />;
         })}
       </div>
 
       <div
-        className="bg-white rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
+        className="bg-white dark:bg-black-600 rounded-xl flex flex-col flex-initial  xs:p-2 lg:p-5 h-full "
       >
 
         {isClient ? <Table data={row} title={title} /> : <EmptyTable

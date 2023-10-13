@@ -32,14 +32,17 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
             type={type}
             name={name}
             placeholder={placeholder}
-            className={`rounded-lg block py-3 ${!icon ? 'px-4' : 'px-12'}  w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
+            className={`rounded-lg block dark:bg-black-800 dark:text-black-200
+             py-3 ${!icon ? 'px-4' : 'px-12'}  w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
               } ${className}`}
           >
             {({ field }: any) => (
               <InputMask
-                className={`rounded-lg block py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name]
-                  ? "bg-[#FCF3F2B2]"
-                  : "bg-black-950"
+                className={`rounded-lg block
+                dark:bg-black-800 dark:text-black-200
+                 py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name]
+                    ? "bg-[#FCF3F2B2]"
+                    : "bg-black-950"
                   } ${className}   `}
                 {...field}
                 mask="999-999-9999" // Define your phone number mask here
@@ -56,7 +59,7 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
               id={id}
               name={name}
               placeholder={placeholder}
-              className={`rounded-lg block
+              className={`rounded-lg block dark:bg-black-800 dark:text-black-200
                       py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov
                       focus:outline-none ${touched[name] && errors[name]
                   ? "bg-[#FCF3F2B2]"
@@ -71,7 +74,7 @@ const Input: FC<IInput & FieldAttributes<any>> = ({
               type={type}
               name={name}
               placeholder={placeholder}
-              className={`rounded-lg block
+              className={`rounded-lg block dark:bg-black-800 dark:text-black-200
                         py-3 ${!icon ? 'px-4' : 'px-12'} w-full focus-within:hover:bg-hov
                         focus:outline-none ${touched[name] && errors[name]
                   ? "bg-[#FCF3F2B2]"

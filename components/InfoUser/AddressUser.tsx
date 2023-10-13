@@ -4,7 +4,7 @@ import React from "react"
 
 const AddressUser = ({ user }: any) => {
     return (
-        <div className="bg-white rounded-xl xs:px-2 lg:px-4 xs:py-2 lg:py-3">
+        <div className="bg-white dark:bg-black-600 rounded-xl xs:px-2 lg:px-4 xs:py-2 lg:py-3">
             <div className="flex items-center justify-between">
                 <div className="p-2 bg-secondary-400 rounded-md">
                     {<Location />}

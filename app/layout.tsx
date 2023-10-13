@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" className={poppins.className}>
-      <body className="bg-main flex  h-full relative">
+    <html lang="en" className={`${poppins.className} `}>
+      <body className="bg-main dark:bg-black-400 flex  h-full relative">
         <ProviderRedux>
           <ToastContainer />
           <Providers>{children}</Providers>

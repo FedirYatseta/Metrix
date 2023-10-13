@@ -19,7 +19,7 @@ const PanelLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Header />
       <div className="flex flex-col w-full h-full">
-        <section className="w-full bg-white">
+        <section className="w-full bg-white dark:bg-black-500">
           <div className="flex xs:px-2 lg:px-5  xs:py-1 lg:py-3 justify-between items-center">
 
             <ClientComponent />

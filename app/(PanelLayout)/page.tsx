@@ -46,10 +46,10 @@ const Home = () => {
   return <section className="p-4 h-full">
     <div className="flex flex-col flex-initial h-full overflow-auto">
       <div className="grid  lg:grid-rows-5 lg:grid-cols-3 	lg:grid-flow-col lg:auto-cols-max h-full  gap-4">
-        <div className="bg-white rounded-xl p-5">
+        <div className="bg-white dark:bg-black-600 rounded-xl p-5">
           <InfoBlock bgIcon={'bg-primary-960'} data={data2} icon={<Graph />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl lg:row-span-2 p-5 xs:max-h-[400px] lg:max-h-max">
+        <div className="bg-white dark:bg-black-600 rounded-xl lg:row-span-2 p-5 xs:max-h-[400px] lg:max-h-max">
           <div className={`flex items-center justify-between ${inter.className}`}>
             <h2 className=" font-medium text-md text-start "> Marketing</h2>
             <OutlineSelect
@@ -73,7 +73,7 @@ const Home = () => {
             ]}
           />
         </div>
-        <div className="bg-white rounded-xl lg:row-span-2 lg:col-span-2 p-5">
+        <div className="bg-white dark:bg-black-600 rounded-xl lg:row-span-2 lg:col-span-2 p-5">
           <div className="flex flex-col h-full">
             <div className={`flex items-center justify-between ${inter.className} pb-3`}>
               <h2 className=" font-medium text-md text-start "> Summary</h2>
@@ -105,7 +105,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-5">
+        <div className="bg-white dark:bg-black-600 rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data1} icon={<User />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
         <div className="bg-primary-0 rounded-xl p-5">
@@ -136,14 +136,14 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-xl p-5">
+        <div className="bg-white dark:bg-black-600 rounded-xl p-5">
           <InfoBlock textColor={'text-danger'} bgIcon={'bg-secondary-200'} data={data4} icon={<ShoppingIcon />} options={[{ value: "Shop", label: "shop" }]} />
 
         </div>
-        <div className="bg-white rounded-xl p-5">
+        <div className="bg-white dark:bg-black-600 rounded-xl p-5">
           <InfoBlock bgIcon={'bg-secondary-200'} data={data3} icon={<BagIcon />} options={[{ value: "Shop", label: "shop" }]} />
         </div>
-        <div className="bg-white rounded-xl lg:row-span-4 p-5 overflow-y-auto min-h-[350px]">
+        <div className="bg-white dark:bg-black-600 rounded-xl lg:row-span-4 p-5 overflow-y-auto min-h-[350px]">
           <h2 className={`${inter.className} font-medium text-md text-start `}>Recent Order</h2>
           <div className="overflow-y-auto">
             {isProduct ? (<EmptyElement

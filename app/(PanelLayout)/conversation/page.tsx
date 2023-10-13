@@ -143,7 +143,7 @@ const Orders = () => {
       <HeaderGeneral name={'New Message'} title={'Conversations with Customers'} />
       <div className=" h-full flex flex-col flex-auto  ">
         <div className="grid xs:grid-col lg:grid-cols-3 gap-4 mt-4 h-full ">
-          <div className="flex flex-col col-span-1 bg-white rounded-xl p-6 ">
+          <div className="flex flex-col col-span-1 bg-white dark:bg-black-600 rounded-xl p-6 ">
             <div className="flex justify-between flex-col">
               <div className="flex justify-between">
                 <h5 className="text-xl font-medium">Contacts</h5>
@@ -168,7 +168,7 @@ const Orders = () => {
             </div>
 
           </div>
-          <div className="lg:col-span-2 bg-white rounded-xl  p-6">
+          <div className="lg:col-span-2 bg-white dark:bg-black-600 rounded-xl  p-6">
             {selectUser ? (
               <ChatDashboard name={selectedUser} />
             ) : (

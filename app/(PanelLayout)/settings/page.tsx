@@ -20,7 +20,7 @@ const Orders = async () => {
   ];
   return (
     <Section>
-      <div className="bg-white rounded-md w-full h-auto">
+      <div className="bg-white dark:bg-black-600 rounded-md w-full h-auto">
         <Tabs tabs={tabsData} defaultTab={0} />
       </div>
     </Section>
