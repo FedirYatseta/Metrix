@@ -92,12 +92,12 @@ const Table = ({ data, title }: any) => {
       <div className="pb-4 text-start flex justify-between xs:flex-col lg:flex-row items-center ">
         <h6 className={`${inter.className} font-medium`}>Customer Orders </h6>
         <div className="grid xs:grid-cols lg:grid-cols-6  gap-2 text-xs  xs:w-full lg:w-8/12">
-          <label className="relative block border-0 h-full col-span-2 z-auto">
+          <label className="relative block border-0 h-full col-span-2 z-auto ">
             <span className="absolute inset-0 left-2 flex items-center ">
               <SearchInput />
             </span>
             <input
-              className=" h-full rounded-md block py-1.5 px-9 w-full text-xs focus-within:hover:bg-hov focus:outline-none border border-black-100 "
+              className="bg-white dark:bg-black-600 h-full rounded-md block py-1.5 px-9 w-full text-xs focus-within:hover:bg-hov focus:outline-none border border-black-100 dark:border-black-800 "
               placeholder="Search"
             ></input>
           </label>
@@ -108,10 +108,10 @@ const Table = ({ data, title }: any) => {
             handleChangeFc={() => { }}
             name={"Bulk Action"}
             options={options}
-            className="flex items-center justify-center text-center border border-black-500 rounded-md py-1  whitespace-nowrap"
+            className="flex items-center justify-center text-center dark:text-black-200 border border-black-500 dark:border-black-800 rounded-md py-1  whitespace-nowrap"
           />
         </div>
-      </div>
+      </div >
 
       <div className="max-h-[calc(100vh-482px)] overflow-auto h-full">
         <table className=" table-auto w-full border-collapse  ">
@@ -133,7 +133,7 @@ const Table = ({ data, title }: any) => {
         </table>
       </div>
       <div
-        className={`${inter.className} border-t border-grey-1 w-full  pt-3 grid xs:grid-col md:grid-cols-2 justify-between items-center`}
+        className={`${inter.className} border-t border-grey-1 dark:border-black-800 w-full  pt-3 grid xs:grid-col md:grid-cols-2 justify-between items-center`}
       >
         <div className="flex md:justify-start items-center xs:py-1 lg:py-0" >
           <div className=" block text-center  bg-[#5E636614]  text-sm rounded-lg px-2 relative">

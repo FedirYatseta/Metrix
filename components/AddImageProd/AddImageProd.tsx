@@ -44,7 +44,7 @@ const AddImageProd = ({ setFieldValue, img }: any) => {
     return (
         <>
             {image === null ? (
-                <div className="my-2 rounded-md border-1  border-grey-1 bg-main px-4 py-12 flex flex-col items-center">
+                <div className="my-2 rounded-md border-1  dark:bg-black-800  border-grey-1 bg-main px-4 py-12 flex flex-col items-center">
                     <div className={`${inter.className} flex flex-col items-center py-12 relative`}>
                         <PreviewIcon />
                         <label htmlFor="avatar" className="px-1"  >
@@ -67,7 +67,7 @@ const AddImageProd = ({ setFieldValue, img }: any) => {
                     </div>
                 </div>
             ) : (
-                <div className="w-full h-full max-w-[372px] max-h-[302px] flex relative">
+                <div className="w-full h-full max-w-[372px] max-h-[302px] flex relative ">
                     <Image fill={true} priority={false} src={image} alt="product" className="rounded-xl " />
                     <div className="absolute top-2 right-2  flex">
                         <label htmlFor="avatar" className="px-1"  >

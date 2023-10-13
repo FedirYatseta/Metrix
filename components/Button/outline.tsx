@@ -7,7 +7,7 @@ type BtnType = {
 };
 const OutlineBtn = ({ icon, name }: BtnType) => {
   return (
-    <button className="flex items-center justify-center border border-black-500 rounded-md px-2 py-1 ">
+    <button className="flex items-center justify-center border border-black-500 dark:border-black-800 dark:text-black-200 rounded-md px-2 py-1 ">
       {icon}
       <span className="pl-2">{name}</span>
     </button>

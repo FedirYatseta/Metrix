@@ -76,7 +76,7 @@ const CSelect: FC<CountrySelectProps> = ({
         styles={customStyles}
         defaultValue={defaultValue}
         onChange={onChange}
-        className={`rounded-lg block py-3 my-2 min-w-fit text-black-200  focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
+        className={`rounded-lg block dark:bg-black-800 dark:text-black-200 py-3 my-2 min-w-fit text-black-200  focus-within:hover:bg-hov focus:outline-none ${touched[name] && errors[name] ? "bg-[#FCF3F2B2]" : "bg-black-950"
           }   `}
       />
     </div>

@@ -1,10 +1,8 @@
 'use client';
 import { ActiveIcon, BagIcon, InActiveIcon, Plus, SendMessage, SmileIcon } from "@/image/image";
 import { inter } from "@/styles/fonts";
-import { Field } from "formik";
 import Link from "next/link";
-import React from "react"
-//
+import React from "react";
 
 const ChatDashboard = ({ name }: any) => {
 
@@ -94,7 +92,7 @@ rounded-br-lg ">I want to know if the price is negotiable, i need about 2 Units
                 </div>
             </div>
             <div>
-                <label className="relative block xs:w-full  my-2 border rounded-md border-grey-1">
+                <label className="relative block xs:w-full  my-2 border rounded-md border-grey-1 dark:border-black-800">
                     <span className="absolute inset-y-0 left-0 flex items-center px-4">
                         <div className="bg-secondary-300 p-1 rounded-md cursor-pointer">
                             <Plus color={'#000'} />
@@ -108,7 +106,7 @@ rounded-br-lg ">I want to know if the price is negotiable, i need about 2 Units
                         placeholder={'message'}
                         className={`rounded-lg block
                          py-3 px-14 w-full focus-within:hover:bg-hov
-                          focus:outline-none  "bg-black-950"
+                          focus:outline-none  bg-black-950 text-white-100 dark:bg-black-600 dark:text-black-200
                                `}
                     />
                     <span className="absolute flex items-center right-0 inset-y-0 px-4">
@@ -117,8 +115,8 @@ rounded-br-lg ">I want to know if the price is negotiable, i need about 2 Units
                         <div className="flex px-4 py-1 bg-secondary-300 items-center rounded-md cursor-pointer">
                             <p className="px-1">Send   </p>
                             <SendMessage />
-                        </div></span>
-
+                        </div>
+                    </span>
                 </label>
 
             </div>

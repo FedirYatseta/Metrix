@@ -12,8 +12,8 @@ const Checkbox = ({ checked, onChange }: any) => {
         value="yes"
         className="opacity-0 absolute inset-0 h-6 w-6  m-auto"
       />
-      <div className="bg-white m-auto border rounded-lg border-black-100 w-6 h-6 flex flex-shrink-0 justify-center items-center focus-within:border-primary-0">
-        <div className=" bg-primary-0 hidden border rounded-lg border-white w-full h-full flex flex-shrink-0 justify-center items-center">
+      <div className="bg-white dark:bg-black-600 m-auto border rounded-lg border-black-100 dark:border-black-400 w-6 h-6 flex flex-shrink-0 justify-center items-center focus-within:border-primary-0">
+        <div className=" bg-primary-0 hidden border rounded-lg border-white dark:border-black-400 w-full h-full flex flex-shrink-0 justify-center items-center">
           <svg
             className="fill-current w-3 h-3 text-primary-0 pointer-events-none"
             width="12"
